@@ -44,8 +44,8 @@ body{
 /* タイトル */
 
 h2{
-  margin-top:80px;
-  margin-bottom:40px;
+  margin-top:90px;
+  margin-bottom:50px;
   font-size:38px;
   font-weight:normal;
   letter-spacing:2px;
@@ -55,36 +55,41 @@ h2{
 
 .wheel{
   position:relative;
-  width:520px;
-  height:520px;
+  width:620px;
+  height:620px;
   margin:auto;
 
-  animation:spin 40s linear infinite;
+  animation:spin 45s linear infinite;
 }
 
-/* 背景円画像 */
+/* 背景の大きい円 */
 
 .wheelbg{
   position:absolute;
-  width:400px;
-  height:400px;
 
-  top:60px;
-  left:60px;
+  width:620px;
+  height:620px;
 
-  opacity:0.9;
+  top:0;
+  left:0;
+
+  opacity:0.18;
+
+  pointer-events:none;
 }
 
 /* キャラクター */
 
 .small{
-  width:110px;
+  width:120px;
   position:absolute;
 
   transition:0.3s;
   cursor:pointer;
 
-  animation:reverseSpin 40s linear infinite;
+  animation:reverseSpin 45s linear infinite;
+
+  z-index:2;
 }
 
 .small:hover{
@@ -96,33 +101,33 @@ h2{
 /* 円配置 */
 
 .s1{
-  top:-10px;
-  left:205px;
+  top:0px;
+  left:250px;
 }
 
 .s2{
-  top:100px;
-  left:390px;
+  top:120px;
+  left:470px;
 }
 
 .s3{
-  top:310px;
-  left:390px;
+  top:370px;
+  left:470px;
 }
 
 .s4{
-  top:430px;
-  left:205px;
+  top:500px;
+  left:250px;
 }
 
 .s5{
-  top:310px;
-  left:20px;
+  top:370px;
+  left:30px;
 }
 
 .s6{
-  top:100px;
-  left:20px;
+  top:120px;
+  left:30px;
 }
 
 /* 円回転 */
@@ -156,11 +161,12 @@ h2{
 /* SNS */
 
 .sns{
-  margin-top:80px;
+  margin-top:90px;
   padding:25px;
   border:4px solid #FDE8DF;
   border-radius:30px;
   display:inline-block;
+  background:#ffffffaa;
 }
 
 .sns a{
@@ -192,50 +198,47 @@ h2{
   }
 
   .wheel{
-    width:320px;
-    height:320px;
+    width:340px;
+    height:340px;
   }
 
   .wheelbg{
-    width:240px;
-    height:240px;
-
-    top:40px;
-    left:40px;
+    width:340px;
+    height:340px;
   }
 
   .small{
-    width:70px;
+    width:72px;
   }
 
   .s1{
-    top:-10px;
-    left:125px;
+    top:0px;
+    left:134px;
   }
 
   .s2{
-    top:60px;
-    left:240px;
+    top:65px;
+    left:255px;
   }
 
   .s3{
-    top:190px;
-    left:240px;
+    top:205px;
+    left:255px;
   }
 
   .s4{
-    top:260px;
-    left:125px;
+    top:268px;
+    left:134px;
   }
 
   .s5{
-    top:190px;
-    left:10px;
+    top:205px;
+    left:13px;
   }
 
   .s6{
-    top:60px;
-    left:10px;
+    top:65px;
+    left:13px;
   }
 
   .sns a{
@@ -257,9 +260,9 @@ h2{
 
 <div class="wheel">
 
-  <!-- 円背景 -->
+  <!-- 背景円 -->
 
-  <img src="IMG_6372.png" class="wheelbg">
+  <img src="IMG_6373.png" class="wheelbg">
 
   <!-- キャラクター -->
 
