@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>β</title>
+<title>Asamilk World</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
@@ -13,104 +15,338 @@
 }
 
 body{
-
-  margin:0;
-
-  background:#FFF9FA;
-
-  overflow-x:hidden;
-
-  font-family:sans-serif;
-
-  text-align:center;
-
+  background:#FFFBFB;
   color:#35200F;
-
+  text-align:center;
+  font-family:sans-serif;
+  margin:0;
+  padding:40px 20px;
+  overflow-x:hidden;
 }
 
-/* 背景 */
+/* 全体中央 */
 
-.bg{
-
-  position:fixed;
-
-  inset:0;
-
+main{
   width:100%;
-
-  height:100%;
-
-  object-fit:cover;
-
-  opacity:0.12;
-
-  z-index:-1;
-
+  max-width:1100px;
+  margin:auto;
 }
 
-/* キャラ */
+/* メイン画像 */
 
-.chara{
-
-  width:220px;
-
-  margin-top:60px;
-
-}
-
-/* 動画 */
-
-video{
-
-  width:90%;
-
-  max-width:800px;
+.topimg{
+  width:100%;
+  max-width:900px;
 
   border-radius:30px;
 
-  margin-top:40px;
+  display:block;
+
+  margin:auto;
 
   box-shadow:
-    0 10px 30px rgba(0,0,0,0.12);
+    0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* 漫画＋Youtube */
+
+.contentbox{
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:flex-start;
+
+  gap:30px;
+
+  margin-top:40px;
+
+  flex-wrap:wrap;
 
 }
 
-/* タイトル */
+/* 漫画画像 */
 
-h1{
+.comicimg{
+  width:100%;
+  max-width:420px;
 
-  margin-top:20px;
+  border-radius:30px;
 
-  font-weight:normal;
+  transition:0.3s;
 
-  letter-spacing:4px;
+  border:5px solid #FDE8DF;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+  display:block;
+}
+
+.comicimg:hover{
+
+  transform:
+    scale(1.03)
+    rotate(-1deg);
 
 }
 
-/* 戻る */
+/* YouTube */
 
-.back{
+.youtubebox{
 
-  display:inline-block;
+  width:100%;
+  max-width:500px;
 
+}
+
+.youtube{
+
+  width:100%;
+
+  aspect-ratio:16/9;
+
+  border:none;
+
+  border-radius:30px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+}
+
+/* Character全体 */
+
+.characterwrap{
+
+  position:relative;
+
+  width:620px;
+  height:620px;
+
+  margin:auto;
   margin-top:60px;
-  margin-bottom:60px;
-
-  color:#35200F;
-
-  text-decoration:none;
-
-  font-size:20px;
-
-  transition:0.2s;
 
 }
 
-.back:hover{
+/* heart背景（固定） */
 
+.wheelbg{
+
+  position:absolute;
+
+  top:50%;
+  left:50%;
+
+  transform:translate(-50%,-50%);
+
+  opacity:0.18;
+
+  pointer-events:none;
+
+  z-index:1;
+
+}
+
+/* 回転部分 */
+
+.wheel{
+
+  position:absolute;
+
+  inset:0;
+
+  animation:spin 45s linear infinite;
+
+}
+
+/* キャラクター */
+
+.small{
+  width:120px;
+  position:absolute;
+
+  cursor:pointer;
+
+  animation:reverseSpin 45s linear infinite;
+
+  z-index:2;
+}
+
+/* クリック時 */
+
+.small.clicked{
+
+  animation:
+    reverseSpin 45s linear infinite,
+    kyurun 0.5s ease;
+
+}
+
+/* 円配置 */
+
+.s1{
+  top:0px;
+  left:250px;
+}
+
+.s2{
+  top:120px;
+  left:470px;
+}
+
+.s3{
+  top:370px;
+  left:470px;
+}
+
+.s4{
+  top:500px;
+  left:250px;
+}
+
+.s5{
+  top:370px;
+  left:30px;
+}
+
+.s6{
+  top:120px;
+  left:30px;
+}
+
+/* 円回転 */
+
+@keyframes spin{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+/* キャラ逆回転 */
+
+@keyframes reverseSpin{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(-360deg);
+  }
+
+}
+
+/* キュルン */
+
+@keyframes kyurun{
+
+  0%{
+    transform:rotate(0deg);
+  }
+
+  100%{
+    transform:rotate(360deg);
+  }
+
+}
+
+/* SNS */
+
+.sns{
+  margin-top:90px;
+}
+
+.sns a{
+  color:#35200F;
+  font-size:42px;
+  margin:18px;
+  text-decoration:none;
+  transition:0.25s;
+  display:inline-block;
+}
+
+.sns a:hover{
   opacity:0.6;
+  transform:
+    scale(1.1)
+    rotate(-8deg);
+}
 
-  transform:scale(1.05);
+/* スマホ */
+
+@media screen and (max-width:800px){
+
+  body{
+    padding:20px 10px;
+  }
+
+  .contentbox{
+    gap:20px;
+  }
+
+  .comicimg{
+    max-width:100%;
+  }
+
+  .youtubebox{
+    max-width:100%;
+  }
+
+  .characterwrap{
+    width:340px;
+    height:340px;
+  }
+
+  .wheelbg{
+    width:280px;
+  }
+
+  .small{
+    width:72px;
+  }
+
+  .s1{
+    top:0px;
+    left:134px;
+  }
+
+  .s2{
+    top:65px;
+    left:255px;
+  }
+
+  .s3{
+    top:205px;
+    left:255px;
+  }
+
+  .s4{
+    top:268px;
+    left:134px;
+  }
+
+  .s5{
+    top:205px;
+    left:13px;
+  }
+
+  .s6{
+    top:65px;
+    left:13px;
+  }
+
+  .sns a{
+    font-size:34px;
+    margin:10px;
+  }
 
 }
 
@@ -120,31 +356,124 @@ h1{
 
 <body>
 
-<!-- 背景 -->
+<main>
 
-<img src="beta_bg.png" class="bg">
+<!-- メイン画像 -->
 
-<!-- キャラ -->
+<img src="top.PNG" class="topimg">
 
-<img src="IMG_6368.png" class="chara">
+<!-- 漫画＋Youtube -->
 
-<h1>β</h1>
+<div class="contentbox">
 
-<!-- 動画 -->
+  <!-- 漫画リンク -->
 
-<video autoplay muted loop playsinline controls>
+  <a href="comic.html">
+    <img src="topday.png" class="comicimg">
+  </a>
 
-  <source src="beta.mp4" type="video/mp4">
+  <!-- YouTube -->
 
-</video>
+  <div class="youtubebox">
 
-<br>
+    <iframe
+      class="youtube"
+      src="https://www.youtube.com/embed/videoseries?list=PLtDU7MZ79avlEiHGInNyjjCA0xhQUdSth&si=3yFOgQq3ojNbUXbB"
+      title="YouTube playlist"
+      allowfullscreen>
+    </iframe>
 
-<a href="index.html" class="back">
+  </div>
 
-← Back
+</div>
 
+<!-- キャラクター -->
+
+<div class="characterwrap">
+
+  <!-- heart背景（固定） -->
+
+  <img src="heart.png" class="wheelbg">
+
+  <!-- 回転部分 -->
+
+  <div class="wheel">
+
+    <img src="hamuko.png" class="small s1">
+
+    <img src="IMG_6365.png" class="small s2">
+
+    <img src="sakuranbou.png" class="small s3">
+
+    <img src="IMG_6367.png" class="small s4">
+
+    <a href="beta.html">
+
+      <img src="IMG_6368.png" class="small s5">
+
+    </a>
+
+    <img src="IMG_6361.png" class="small s6">
+
+  </div>
+
+</div>
+
+<!-- SNS -->
+
+<div class="sns">
+
+<a href="https://asamilkart.booth.pm" target="_blank">
+<i class="fa-solid fa-store"></i>
 </a>
+
+<a href="https://youtube.com/@asamilkart?si=88Nbj_MVDDZPPC1Z" target="_blank">
+<i class="fa-brands fa-youtube"></i>
+</a>
+
+<a href="https://www.tiktok.com/@asamilkart" target="_blank">
+<i class="fa-brands fa-tiktok"></i>
+</a>
+
+<a href="https://twitter.com/asamilkart" target="_blank">
+<i class="fa-brands fa-x-twitter"></i>
+</a>
+
+<a href="https://www.instagram.com/asamilkart" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://www.threads.net/@asamilkart" target="_blank">
+<i class="fa-brands fa-threads"></i>
+</a>
+
+<a href="https://cluster.mu/u/asamilkart" target="_blank">
+<i class="fa-solid fa-cube"></i>
+</a>
+
+</div>
+
+</main>
+
+<script>
+
+const chars = document.querySelectorAll('.small');
+
+chars.forEach((img)=>{
+
+  img.addEventListener('click',()=>{
+
+    img.classList.remove('clicked');
+
+    void img.offsetWidth;
+
+    img.classList.add('clicked');
+
+  });
+
+});
+
+</script>
 
 </body>
 </html>
