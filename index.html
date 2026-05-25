@@ -51,33 +51,48 @@ h2{
   letter-spacing:2px;
 }
 
-/* キャラクター円 */
+/* Character全体 */
 
-.wheel{
+.characterwrap{
+
   position:relative;
+
   width:620px;
   height:620px;
+
   margin:auto;
 
-  animation:spin 45s linear infinite;
 }
 
-/* 背景ハート */
+/* heart背景（固定） */
 
 .wheelbg{
+
   position:absolute;
 
-  width:620px;
-  height:620px;
+  top:50%;
+  left:50%;
 
-  top:0;
-  left:0;
+  transform:translate(-50%,-50%);
 
   opacity:0.18;
 
   pointer-events:none;
 
   z-index:1;
+
+}
+
+/* 回転部分 */
+
+.wheel{
+
+  position:absolute;
+
+  inset:0;
+
+  animation:spin 45s linear infinite;
+
 }
 
 /* キャラクター */
@@ -93,9 +108,9 @@ h2{
   z-index:2;
 }
 
-/* クリック回転 */
+/* クリック時 */
 
-.small:active{
+.small.clicked{
 
   animation:
     reverseSpin 45s linear infinite,
@@ -163,24 +178,20 @@ h2{
 
 }
 
-/* キュルン回転 */
+/* キュルン */
 
 @keyframes kyurun{
 
   0%{
-    transform:scale(1);
+    transform:scale(1) rotate(0deg);
   }
 
-  40%{
-    transform:
-      scale(1.15)
-      rotate(180deg);
+  50%{
+    transform:scale(1.15) rotate(180deg);
   }
 
   100%{
-    transform:
-      scale(1)
-      rotate(360deg);
+    transform:scale(1) rotate(360deg);
   }
 
 }
@@ -224,12 +235,7 @@ h2{
     font-size:28px;
   }
 
-  .wheel{
-    width:340px;
-    height:340px;
-  }
-
-  .wheelbg{
+  .characterwrap{
     width:340px;
     height:340px;
   }
@@ -291,25 +297,29 @@ h2{
 
 <h2>Character</h2>
 
-<div class="wheel">
+<div class="characterwrap">
 
-  <!-- 背景ハート（静止） -->
+  <!-- heart背景（固定） -->
 
   <img src="heart.png" class="wheelbg">
 
-  <!-- キャラクター -->
+  <!-- 回転部分 -->
 
-  <img src="hamuko.png" class="small s1">
+  <div class="wheel">
 
-  <img src="IMG_6365.png" class="small s2">
+    <img src="hamuko.png" class="small s1">
 
-  <img src="sakuranbou.png" class="small s3">
+    <img src="IMG_6365.png" class="small s2">
 
-  <img src="IMG_6367.png" class="small s4">
+    <img src="sakuranbou.png" class="small s3">
 
-  <img src="IMG_6368.png" class="small s5">
+    <img src="IMG_6367.png" class="small s4">
 
-  <img src="IMG_6361.png" class="small s6">
+    <img src="IMG_6368.png" class="small s5">
+
+    <img src="IMG_6361.png" class="small s6">
+
+  </div>
 
 </div>
 
@@ -344,6 +354,26 @@ h2{
 </a>
 
 </div>
+
+<script>
+
+const chars = document.querySelectorAll('.small');
+
+chars.forEach((img)=>{
+
+  img.addEventListener('click',()=>{
+
+    img.classList.remove('clicked');
+
+    void img.offsetWidth;
+
+    img.classList.add('clicked');
+
+  });
+
+});
+
+</script>
 
 </body>
 </html>
