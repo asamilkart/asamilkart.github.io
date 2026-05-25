@@ -8,6 +8,10 @@
 
 <style>
 
+*{
+  box-sizing:border-box;
+}
+
 body{
 
   margin:0;
@@ -20,6 +24,8 @@ body{
   font-family:sans-serif;
 
   overflow-x:hidden;
+
+  color:#35200F;
 
 }
 
@@ -42,7 +48,7 @@ body{
 
 }
 
-/* キャラ */
+/* キャラ画像 */
 
 .chara{
 
@@ -52,14 +58,18 @@ body{
 
 }
 
-/* 動画 */
+/* YouTube */
 
-video{
+.youtube{
 
   width:90%;
   max-width:800px;
 
+  aspect-ratio:16/9;
+
   margin-top:40px;
+
+  border:none;
 
   border-radius:30px;
 
@@ -82,11 +92,33 @@ video{
 
   font-size:22px;
 
+  transition:0.2s;
+
 }
 
 .back:hover{
 
   opacity:0.6;
+
+  transform:scale(1.05);
+
+}
+
+/* スマホ */
+
+@media screen and (max-width:800px){
+
+  .chara{
+
+    width:140px;
+
+  }
+
+  .youtube{
+
+    width:100%;
+
+  }
 
 }
 
@@ -96,23 +128,27 @@ video{
 
 <body>
 
-<img src="beta_bg.png" class="bg">
+<!-- 背景 -->
+
+<img src="betaback.png" class="bg">
+
+<!-- キャラクター -->
 
 <img src="IMG_6368.png" class="chara">
 
-<video autoplay muted loop playsinline controls>
+<!-- YouTube -->
 
-  <source src="beta.mp4" type="video/mp4">
-
-</video>
+<iframe
+class="youtube"
+src="https://www.youtube.com/embed/-gzY1akAO9I?"
+title="YouTube video"
+allowfullscreen>
+</iframe>
 
 <br>
+
+<!-- 戻る -->
 
 <a href="index.html" class="back">
 
 ← Back
-
-</a>
-
-</body>
-</html>
