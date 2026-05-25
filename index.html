@@ -62,7 +62,7 @@ h2{
   animation:spin 45s linear infinite;
 }
 
-/* 背景円画像 */
+/* 背景ハート */
 
 .wheelbg{
   position:absolute;
@@ -76,6 +76,8 @@ h2{
   opacity:0.18;
 
   pointer-events:none;
+
+  z-index:1;
 }
 
 /* キャラクター */
@@ -84,7 +86,6 @@ h2{
   width:120px;
   position:absolute;
 
-  transition:0.4s;
   cursor:pointer;
 
   animation:reverseSpin 45s linear infinite;
@@ -92,15 +93,13 @@ h2{
   z-index:2;
 }
 
-/* 触れた時 */
+/* クリック回転 */
 
-.small:hover{
+.small:active{
 
-  animation-play-state:paused;
-
-  transform:
-    scale(1.12)
-    rotate(12deg);
+  animation:
+    reverseSpin 45s linear infinite,
+    kyurun 0.6s ease;
 
 }
 
@@ -160,6 +159,28 @@ h2{
 
   to{
     transform:rotate(-360deg);
+  }
+
+}
+
+/* キュルン回転 */
+
+@keyframes kyurun{
+
+  0%{
+    transform:scale(1);
+  }
+
+  40%{
+    transform:
+      scale(1.15)
+      rotate(180deg);
+  }
+
+  100%{
+    transform:
+      scale(1)
+      rotate(360deg);
   }
 
 }
@@ -272,13 +293,13 @@ h2{
 
 <div class="wheel">
 
-  <!-- 背景円 -->
+  <!-- 背景ハート（静止） -->
 
-  <img src="asamilkseisaku.png" class="wheelbg">
+  <img src="heart.png" class="wheelbg">
 
   <!-- キャラクター -->
 
-  <img src="IMG_6364.png" class="small s1">
+  <img src="hamuko.png" class="small s1">
 
   <img src="IMG_6365.png" class="small s2">
 
