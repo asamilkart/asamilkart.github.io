@@ -62,16 +62,15 @@ h2{
   animation:spin 45s linear infinite;
 }
 
-/* 背景ハート */
+/* heart背景 */
 
 .wheelbg{
   position:absolute;
 
-  width:620px;
-  height:620px;
+  top:50%;
+  left:50%;
 
-  top:0;
-  left:0;
+  transform:translate(-50%,-50%);
 
   opacity:0.18;
 
@@ -93,9 +92,9 @@ h2{
   z-index:2;
 }
 
-/* クリック回転 */
+/* クリック時 */
 
-.small:active{
+.small.clicked{
 
   animation:
     reverseSpin 45s linear infinite,
@@ -163,24 +162,20 @@ h2{
 
 }
 
-/* キュルン回転 */
+/* キュルン */
 
 @keyframes kyurun{
 
   0%{
-    transform:scale(1);
+    transform:scale(1) rotate(0deg);
   }
 
-  40%{
-    transform:
-      scale(1.15)
-      rotate(180deg);
+  50%{
+    transform:scale(1.15) rotate(180deg);
   }
 
   100%{
-    transform:
-      scale(1)
-      rotate(360deg);
+    transform:scale(1) rotate(360deg);
   }
 
 }
@@ -225,11 +220,6 @@ h2{
   }
 
   .wheel{
-    width:340px;
-    height:340px;
-  }
-
-  .wheelbg{
     width:340px;
     height:340px;
   }
@@ -293,7 +283,7 @@ h2{
 
 <div class="wheel">
 
-  <!-- 背景ハート（静止） -->
+  <!-- heart背景（静止） -->
 
   <img src="heart.png" class="wheelbg">
 
@@ -344,6 +334,26 @@ h2{
 </a>
 
 </div>
+
+<script>
+
+const chars = document.querySelectorAll('.small');
+
+chars.forEach((img)=>{
+
+  img.addEventListener('click',()=>{
+
+    img.classList.remove('clicked');
+
+    void img.offsetWidth;
+
+    img.classList.add('clicked');
+
+  });
+
+});
+
+</script>
 
 </body>
 </html>
