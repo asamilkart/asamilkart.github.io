@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>β</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+
+  margin:0;
+
+  background:#FFF9FA;
+
+  overflow-x:hidden;
+
+  font-family:sans-serif;
+
+  text-align:center;
+
+  color:#35200F;
+
+}
+
+/* 背景 */
+
+.bg{
+
+  position:fixed;
+
+  inset:0;
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  opacity:0.12;
+
+  z-index:-1;
+
+}
+
+/* キャラ */
+
+.chara{
+
+  width:220px;
+
+  margin-top:60px;
+
+}
+
+/* 動画 */
+
+video{
+
+  width:90%;
+
+  max-width:800px;
+
+  border-radius:30px;
+
+  margin-top:40px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.12);
+
+}
+
+/* タイトル */
+
+h1{
+
+  margin-top:20px;
+
+  font-weight:normal;
+
+  letter-spacing:4px;
+
+}
+
+/* 戻る */
+
+.back{
+
+  display:inline-block;
+
+  margin-top:60px;
+  margin-bottom:60px;
+
+  color:#35200F;
+
+  text-decoration:none;
+
+  font-size:20px;
+
+  transition:0.2s;
+
+}
+
+.back:hover{
+
+  opacity:0.6;
+
+  transform:scale(1.05);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- 背景 -->
+
+<img src="beta_bg.png" class="bg">
+
+<!-- キャラ -->
+
+<img src="IMG_6368.png" class="chara">
+
+<h1>β</h1>
+
+<!-- 動画 -->
+
+<video autoplay muted loop playsinline controls>
+
+  <source src="beta.mp4" type="video/mp4">
+
+</video>
+
+<br>
+
+<a href="index.html" class="back">
+
+← Back
+
+</a>
+
+</body>
+</html>
