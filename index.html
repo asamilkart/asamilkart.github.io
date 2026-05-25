@@ -17,15 +17,6 @@ body{
   padding:40px;
 }
 
-h1{
-  font-size:48px;
-  margin-bottom:10px;
-}
-
-p{
-  font-size:18px;
-}
-
 .topimg{
   width:100%;
   max-width:900px;
@@ -44,6 +35,28 @@ p{
 
 h2{
   margin-top:50px;
+}
+
+.charas{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  overflow-x:auto;
+  padding:30px;
+}
+
+.charaimg{
+  width:220px;
+  border-radius:25px;
+  border:6px solid #FDE8DF;
+  transition:0.4s;
+  cursor:pointer;
+}
+
+.charaimg:hover{
+  transform:
+    scale(1.08)
+    rotate(-2deg);
 }
 
 .sns{
@@ -72,19 +85,26 @@ h2{
 
 <body>
 
-<h1>Asamilk World</h1>
-
-<p>あさみるく</p>
-
 <img src="top.PNG" class="topimg">
+
+<h2>Character</h2>
+
+<div class="charas">
+
+  <img src="IMG_6363.PNG" class="charaimg">
+  <img src="IMG_6362.PNG" class="charaimg">
+  <img src="IMG_6361.PNG" class="charaimg">
+  <img src="IMG_6357.PNG" class="charaimg">
+  <img src="IMG_6356.PNG" class="charaimg">
+  <img src="IMG_6355.PNG" class="charaimg">
+
+</div>
 
 <h2>Comic</h2>
 
 <a href="comic.html">
 <img src="comic1.jpg" class="comicimg">
 </a>
-
-<p>日常イラスト</p>
 
 <div class="sns">
 
