@@ -161,28 +161,23 @@ main{
 
 }
 
-/* キャラクターリンク */
-
-.charalink{
-
-  position:absolute;
-
-  display:block;
-
-}
-
 /* キャラクター */
 
 .small{
-
   width:120px;
+  position:absolute;
 
   cursor:pointer;
 
   animation:reverseSpin 45s linear infinite;
 
   z-index:2;
+}
 
+/* リンク */
+
+.charalink{
+  display:block;
 }
 
 /* クリック時 */
@@ -402,11 +397,11 @@ main{
 
 <div class="characterwrap">
 
-  <!-- heart背景 -->
+  <!-- heart背景（固定） -->
 
   <img src="heart.png" class="wheelbg">
 
-  <!-- 回転 -->
+  <!-- 回転部分 -->
 
   <div class="wheel">
 
@@ -418,11 +413,9 @@ main{
 
     <img src="IMG_6367.png" class="small s4">
 
-    <!-- β -->
+    <a href="beta.html" class="charalink">
 
-    <a href="beta.html" class="charalink s5">
-
-      <img src="IMG_6368.png" class="small">
+      <img src="IMG_6368.png" class="small s5">
 
     </a>
 
