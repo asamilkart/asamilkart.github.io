@@ -2,11 +2,17 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Asamilk World</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
+
+*{
+  box-sizing:border-box;
+}
 
 body{
   background:#FFFBFB;
@@ -14,8 +20,16 @@ body{
   text-align:center;
   font-family:sans-serif;
   margin:0;
-  padding:40px;
+  padding:40px 20px;
   overflow-x:hidden;
+}
+
+/* 全体中央 */
+
+main{
+  width:100%;
+  max-width:1000px;
+  margin:auto;
 }
 
 /* トップ画像 */
@@ -25,6 +39,9 @@ body{
   max-width:900px;
   border-radius:30px;
   margin-top:30px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 /* Comic */
@@ -32,13 +49,29 @@ body{
 .comicimg{
   width:100%;
   max-width:700px;
+
   border-radius:30px;
+
   margin-top:20px;
+
   transition:0.3s;
+
+  border:5px solid #FDE8DF;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .comicimg:hover{
-  transform:scale(1.02);
+
+  transform:
+    scale(1.03)
+    rotate(-1deg);
+
 }
 
 /* タイトル */
@@ -228,7 +261,7 @@ h2{
 @media screen and (max-width:800px){
 
   body{
-    padding:20px;
+    padding:20px 10px;
   }
 
   h2{
@@ -238,6 +271,10 @@ h2{
   .characterwrap{
     width:340px;
     height:340px;
+  }
+
+  .wheelbg{
+    width:280px;
   }
 
   .small{
@@ -287,9 +324,11 @@ h2{
 
 <body>
 
+<main>
+
 <img src="top.PNG" class="topimg">
 
-<h2>Comic</h2>
+<h2>日常イラスト ↓</h2>
 
 <a href="comic.html">
   <img src="top2.png" class="comicimg">
@@ -354,6 +393,8 @@ h2{
 </a>
 
 </div>
+
+</main>
 
 <script>
 
