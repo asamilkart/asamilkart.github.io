@@ -31,36 +31,41 @@ body{
   border-radius:20px;
   margin-top:20px;
   border:6px solid #FDE8DF;
+  transition:0.3s;
+}
+
+.comicimg:hover{
+  transform:scale(1.02);
 }
 
 h2{
-  margin-top:50px;
+  margin-top:70px;
+  margin-bottom:30px;
+  font-size:32px;
 }
 
 .charas{
   display:flex;
-  justify-content:center;
-  gap:20px;
-  overflow-x:auto;
-  padding:30px;
+  flex-direction:column;
+  align-items:center;
+  gap:30px;
+  margin-top:30px;
 }
 
 .charaimg{
-  width:220px;
+  width:100%;
+  max-width:500px;
   border-radius:25px;
   border:6px solid #FDE8DF;
-  transition:0.4s;
-  cursor:pointer;
+  transition:0.3s;
 }
 
 .charaimg:hover{
-  transform:
-    scale(1.08)
-    rotate(-2deg);
+  transform:scale(1.02);
 }
 
 .sns{
-  margin-top:50px;
+  margin-top:70px;
   padding:25px;
   border:4px solid #FDE8DF;
   border-radius:25px;
@@ -79,6 +84,23 @@ h2{
   opacity:0.6;
 }
 
+@media screen and (max-width:700px){
+
+  body{
+    padding:20px;
+  }
+
+  h2{
+    font-size:26px;
+  }
+
+  .sns a{
+    font-size:34px;
+    margin:10px;
+  }
+
+}
+
 </style>
 
 </head>
@@ -87,23 +109,28 @@ h2{
 
 <img src="top.PNG" class="topimg">
 
-<h2>キャラクター紹介</h2>
+<h2>Character</h2>
 
 <div class="charas">
 
   <img src="IMG_6363.png" class="charaimg">
+
   <img src="IMG_6362.png" class="charaimg">
+
   <img src="IMG_6361.png" class="charaimg">
+
+  <img src="IMG_6357.png" class="charaimg">
+
   <img src="IMG_6356.png" class="charaimg">
+
   <img src="IMG_6355.png" class="charaimg">
- <img src="IMG_6357.png" class="charaimg">
 
 </div>
 
 <h2>Comic</h2>
 
 <a href="comic.html">
-<img src="comic1.jpg" class="comicimg">
+  <img src="comic1.jpg" class="comicimg">
 </a>
 
 <div class="sns">
