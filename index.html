@@ -62,7 +62,7 @@ h2{
   animation:spin 45s linear infinite;
 }
 
-/* 背景の大きい円 */
+/* 背景円画像 */
 
 .wheelbg{
   position:absolute;
@@ -84,7 +84,7 @@ h2{
   width:120px;
   position:absolute;
 
-  transition:0.3s;
+  transition:0.4s;
   cursor:pointer;
 
   animation:reverseSpin 45s linear infinite;
@@ -92,10 +92,16 @@ h2{
   z-index:2;
 }
 
+/* 触れた時 */
+
 .small:hover{
+
+  animation-play-state:paused;
+
   transform:
-    scale(1.08)
-    rotate(8deg);
+    scale(1.12)
+    rotate(12deg);
+
 }
 
 /* 円配置 */
@@ -256,17 +262,23 @@ h2{
 
 <img src="top.PNG" class="topimg">
 
+<h2>Comic</h2>
+
+<a href="comic.html">
+  <img src="comic1.jpg" class="comicimg">
+</a>
+
 <h2>Character</h2>
 
 <div class="wheel">
 
   <!-- 背景円 -->
 
-  <img src="IMG_6373.png" class="wheelbg">
+  <img src="asamilkseisaku.png" class="wheelbg">
 
   <!-- キャラクター -->
 
-  <img src="hamuko.png" class="small s1">
+  <img src="IMG_6364.png" class="small s1">
 
   <img src="IMG_6365.png" class="small s2">
 
@@ -279,12 +291,6 @@ h2{
   <img src="IMG_6361.png" class="small s6">
 
 </div>
-
-<h2>Comic</h2>
-
-<a href="comic.html">
-  <img src="comic1.jpg" class="comicimg">
-</a>
 
 <div class="sns">
 
