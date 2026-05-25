@@ -32,16 +32,20 @@ main{
   margin:auto;
 }
 
-/* トップ画像 */
+/* メイン画像 */
 
 .topimg{
   width:100%;
   max-width:900px;
+
   border-radius:30px;
-  margin-top:30px;
+
   display:block;
-  margin-left:auto;
-  margin-right:auto;
+
+  margin:auto;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
 }
 
 /* Comic */
@@ -52,7 +56,7 @@ main{
 
   border-radius:30px;
 
-  margin-top:20px;
+  margin-top:40px;
 
   transition:0.3s;
 
@@ -84,6 +88,7 @@ main{
   height:620px;
 
   margin:auto;
+  margin-top:40px;
 
 }
 
@@ -137,7 +142,7 @@ main{
 
   animation:
     reverseSpin 45s linear infinite,
-    kyurun 0.6s ease;
+    kyurun 0.5s ease;
 
 }
 
@@ -206,15 +211,11 @@ main{
 @keyframes kyurun{
 
   0%{
-    transform:scale(1) rotate(0deg);
-  }
-
-  50%{
-    transform:scale(1.15) rotate(180deg);
+    transform:rotate(0deg);
   }
 
   100%{
-    transform:scale(1) rotate(360deg);
+    transform:rotate(360deg);
   }
 
 }
@@ -312,13 +313,17 @@ main{
 
 <main>
 
-<img src="topday.png" class="topimg">
+<!-- メイン画像 -->
 
-<div style="height:40px;"></div>
+<img src="top.PNG" class="topimg">
+
+<!-- 漫画リンク -->
 
 <a href="comic.html">
-  <img src="top2.png" class="comicimg">
+  <img src="topday.png" class="comicimg">
 </a>
+
+<!-- キャラクター -->
 
 <div class="characterwrap">
 
@@ -345,6 +350,8 @@ main{
   </div>
 
 </div>
+
+<!-- SNS -->
 
 <div class="sns">
 
