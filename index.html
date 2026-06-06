@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Asamilk World</title>
+<title>あさみるく</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -130,7 +130,7 @@ main{
 
 }
 
-/* heart背景 */
+/* heart背景（固定） */
 
 .wheelbg{
 
@@ -161,35 +161,20 @@ main{
 
 }
 
-/* キャラリンク */
-
-.charalink{
-
-  position:absolute;
-
-  display:block;
-
-  z-index:2;
-
-}
-
 /* キャラクター */
 
 .small{
-
   width:120px;
+  position:absolute;
 
   cursor:pointer;
 
   animation:reverseSpin 45s linear infinite;
 
   z-index:2;
-
-  display:block;
-
 }
 
-/* キュルン */
+/* クリック時 */
 
 .small.clicked{
 
@@ -377,66 +362,76 @@ main{
 
 <img src="top.PNG" class="topimg">
 
-<!-- 漫画＋Youtube -->
+<!-- メインYouTube -->
 
-<div class="contentbox">
+<div class="youtubebox" style="margin:auto; margin-top:40px;">
 
-  <!-- 漫画リンク -->
-
-  <a href="comic.html">
-    <img src="topday.png" class="comicimg">
-  </a>
-
-  <!-- YouTube -->
-
-  <div class="youtubebox">
-
-    <iframe
-      class="youtube"
-      src="https://www.youtube.com/embed/videoseries?list=PLtDU7MZ79avmn4ffGvj2qb0chWxiazdLH&si=8otA76k0RvQHr-OG"
-      title="YouTube playlist"
-      allowfullscreen>
-    </iframe>
-
-  </div>
+  <iframe
+    class="youtube"
+    src="https://www.youtube.com/embed/videoseries?list=PLtDU7MZ79avmn4ffGvj2qb0chWxiazdLH"
+    title="YouTube playlist"
+    allowfullscreen>
+  </iframe>
 
 </div>
+
+<h2 style="
+margin-top:70px;
+font-size:36px;
+font-weight:normal;
+letter-spacing:2px;
+">
+キャラクター図鑑
+</h2>
 
 <!-- キャラクター -->
 
 <div class="characterwrap">
 
-  <!-- heart背景 -->
+  <!-- heart背景（固定） -->
 
   <img src="heart.png" class="wheelbg">
 
-  <!-- 回転 -->
+  <!-- 回転部分 -->
 
   <div class="wheel">
 
-    <a href="hamuko.html" class="charalink s1">
-      <img src="hamuko.png" class="small">
-    </a>
+    <img src="hamuko.png" class="small s1">
 
-    <a href="ringo.html" class="charalink s2">
-      <img src="IMG_6365.png" class="small">
-    </a>
+    <img src="IMG_6365.png" class="small s2">
 
-    <a href="sakuranbou.html" class="charalink s3">
-      <img src="sakuranbou.png" class="small">
-    </a>
+    <img src="sakuranbou.png" class="small s3">
 
-    <a href="chara4.html" class="charalink s4">
-      <img src="IMG_6367.png" class="small">
-    </a>
+    <img src="IMG_6367.png" class="small s4">
 
-    <a href="beta.html" class="charalink s5">
-      <img src="IMG_6368.png" class="small">
-    </a>
+    <img src="IMG_6368.png" class="small s5">
 
-    <a href="chara6.html" class="charalink s6">
-      <img src="IMG_6361.png" class="small">
-    </a>
+    <img src="IMG_6361.png" class="small s6">
+
+  </div>
+
+</div>
+
+<!-- 日常漫画＋サブYouTube -->
+
+<div class="contentbox">
+
+  <!-- 日常漫画 -->
+
+  <a href="comic.html">
+    <img src="topday.png" class="comicimg">
+  </a>
+
+  <!-- サブYouTube -->
+
+  <div class="youtubebox">
+
+    <iframe
+      class="youtube"
+      src="PLtDU7MZ79avlEiHGInNyjjCA0xhQUdSth&si=inKs3vvWb-wJqqw4"
+      title="YouTube playlist"
+      allowfullscreen>
+    </iframe>
 
   </div>
 
@@ -450,7 +445,7 @@ main{
 <i class="fa-solid fa-store"></i>
 </a>
 
-<a href="https://youtube.com/@asamilkart" target="_blank">
+<a href="https://youtube.com/@asamilkart?si=88Nbj_MVDDZPPC1Z" target="_blank">
 <i class="fa-brands fa-youtube"></i>
 </a>
 
@@ -480,29 +475,17 @@ main{
 
 <script>
 
-const links = document.querySelectorAll('.charalink');
+const chars = document.querySelectorAll('.small');
 
-links.forEach((link)=>{
+chars.forEach((img)=>{
 
-  link.addEventListener('click',(e)=>{
-
-    e.preventDefault();
-
-    const img = link.querySelector('.small');
+  img.addEventListener('click',()=>{
 
     img.classList.remove('clicked');
 
     void img.offsetWidth;
 
     img.classList.add('clicked');
-
-    const target = link.getAttribute('href');
-
-    setTimeout(()=>{
-
-      window.location.href = target;
-
-    },400);
 
   });
 
