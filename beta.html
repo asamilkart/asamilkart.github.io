@@ -61,23 +61,74 @@ body{
 
 }
 
-/* YouTube */
+/* プロフィール */
 
-.youtube{
+.profile{
 
-  width:90%;
-  max-width:800px;
+  margin-top:25px;
 
-  aspect-ratio:16/9;
+}
 
-  margin-top:40px;
+.name{
 
-  border:none;
+  font-size:34px;
+
+  font-weight:bold;
+
+  color:#FFFFFF;
+
+  margin-bottom:18px;
+
+}
+
+.text{
+
+  font-size:18px;
+
+  line-height:1.9;
+
+  color:#F8EDED;
+
+}
+
+/* BOOTH＋YouTube */
+
+.contentbox{
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:flex-start;
+
+  gap:30px;
+
+  margin-top:50px;
+
+  flex-wrap:wrap;
+
+}
+
+.linkimg{
+
+  width:100%;
+
+  max-width:320px;
 
   border-radius:30px;
 
   box-shadow:
-    0 10px 40px rgba(0,0,0,0.45);
+    0 10px 30px rgba(0,0,0,0.35);
+
+  transition:0.25s;
+
+  display:block;
+
+}
+
+.linkimg:hover{
+
+  transform:scale(1.03);
 
 }
 
@@ -117,9 +168,21 @@ body{
 
   }
 
-  .youtube{
+  .name{
 
-    width:100%;
+    font-size:26px;
+
+  }
+
+  .text{
+
+    font-size:16px;
+
+  }
+
+  .contentbox{
+
+    gap:15px;
 
   }
 
@@ -139,16 +202,47 @@ body{
 
 <img src="IMG_6368.png" class="chara">
 
-<!-- YouTube -->
+<!-- 紹介 -->
 
-<iframe
-class="youtube"
-src="https://www.youtube.com/embed/-gzY1akAO9I"
-title="YouTube video"
-allowfullscreen>
-</iframe>
+<div class="profile">
 
-<br>
+  <div class="name">
+    -ウイルスβ(ベータ)-
+  </div>
+
+  <div class="text">
+    誕生日1月3日<br>
+    ニンゲンのロマンスから生まれたウイルス<br>
+    好奇心旺盛なお年頃。
+  </div>
+
+</div>
+
+<!-- BOOTH + YouTube -->
+
+<div class="contentbox">
+
+  <a
+    href="https://booth.pm/ja/items/7833622"
+    target="_blank">
+
+    <img
+      src="boothbeta.png"
+      class="linkimg">
+
+  </a>
+
+  <a
+    href="https://youtu.be/-gzY1akAO9I"
+    target="_blank">
+
+    <img
+      src="youtubebeta.png"
+      class="linkimg">
+
+  </a>
+
+</div>
 
 <!-- 戻る -->
 
