@@ -123,6 +123,42 @@ main{
 
 }
 
+.slidebuttons{
+
+  margin-top:12px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:15px;
+
+}
+
+.slidebuttons button{
+
+  border:none;
+
+  background:none;
+
+  font-size:24px;
+
+  cursor:pointer;
+
+  color:#35200F;
+
+}
+
+#dots{
+
+  font-size:18px;
+
+  letter-spacing:4px;
+
+}
+
 
 /* Character全体 */
 
@@ -290,6 +326,8 @@ main{
 
 /* スマホ */
 
+@media screen and (max-width:800px){
+
   .contentbox{
 
     flex-wrap:nowrap;
@@ -396,14 +434,24 @@ main{
 
   <!-- スライドショー -->
 
-  <div class="slideshowbox">
+<div class="slideshowbox">
 
-    <img
-      id="slideshow"
-      src="latest1.png"
-      class="comicimg">
+  <img
+    id="slideshow"
+    src="latest1.png"
+    class="comicimg">
+
+  <div class="slidebuttons">
+
+    <button onclick="prevSlide()">◀</button>
+
+    <span id="dots"></span>
+
+    <button onclick="nextSlide()">▶</button>
 
   </div>
+
+</div>
 
   <!-- メインYouTube -->
 
@@ -545,7 +593,38 @@ chars.forEach((img)=>{
 
 let slideIndex = 0;
 
-setInterval(()=>{
+function updateDots(){
+
+  let text = "";
+
+  for(let i=0;i<slides.length;i++){
+
+    if(i === slideIndex){
+
+      text += "● ";
+
+    }else{
+
+      text += "○ ";
+
+    }
+
+  }
+
+  document.getElementById("dots").textContent = text;
+
+}
+
+function showSlide(){
+
+  document.getElementById("slideshow").src =
+    slides[slideIndex];
+
+  updateDots();
+
+}
+
+function nextSlide(){
 
   slideIndex++;
 
@@ -555,11 +634,27 @@ setInterval(()=>{
 
   }
 
-  document.getElementById("slideshow").src =
-    slides[slideIndex];
+  showSlide();
 
-},5000);
+}
 
+function prevSlide(){
+
+  slideIndex--;
+
+  if(slideIndex < 0){
+
+    slideIndex = slides.length - 1;
+
+  }
+
+  showSlide();
+
+}
+
+showSlide();
+
+setInterval(nextSlide,5000);
 </script>
 
 </body>
