@@ -91,7 +91,7 @@ body{
 
 }
 
-/* BOOTH＋YouTube */
+/* BOOTH + YouTube */
 
 .contentbox{
 
@@ -129,6 +129,22 @@ body{
 .linkimg:hover{
 
   transform:scale(1.03);
+
+}
+
+.youtube{
+
+  width:100%;
+  max-width:320px;
+
+  aspect-ratio:16/9;
+
+  border:none;
+
+  border-radius:30px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.35);
 
 }
 
@@ -227,20 +243,17 @@ body{
     target="_blank">
 
     <img
-      src="boothbeta.png"
+      src="bbooth.png"
       class="linkimg">
 
   </a>
 
-  <a
-    href="https://youtu.be/-gzY1akAO9I"
-    target="_blank">
-
-    <img
-      src="youtubebeta.png"
-      class="linkimg">
-
-  </a>
+  <iframe
+    class="youtube"
+    src="https://www.youtube.com/embed/-gzY1akAO9I"
+    title="YouTube video"
+    allowfullscreen>
+  </iframe>
 
 </div>
 
