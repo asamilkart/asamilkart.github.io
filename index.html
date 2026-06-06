@@ -436,10 +436,12 @@ main{
 
 <div class="slideshowbox">
 
+<a id="slideLink" href="#">
   <img
     id="slideshow"
     src="latest1.png"
     class="comicimg">
+</a>
 
   <div class="slidebuttons">
 
@@ -582,12 +584,29 @@ chars.forEach((img)=>{
 
   });
 
-}); const slides = [
+}); 
 
-  "latest1.png",
-  "latest2.png",
-  "latest3.png",
-  "latest4.png"
+const slides = [
+
+  {
+    image:"latest1.png",
+    link:"#"
+  },
+
+  {
+    image:"latest2.png",
+    link:"#"
+  },
+
+  {
+    image:"latest3.png",
+    link:"#"
+  },
+
+  {
+    image:"latest4.png",
+    link:"https://cluster.mu/store/accessories/0c7eba3d-4c9e-4461-aec6-038c7de03fbf"
+  }
 
 ];
 
@@ -618,7 +637,10 @@ function updateDots(){
 function showSlide(){
 
   document.getElementById("slideshow").src =
-    slides[slideIndex];
+    slides[slideIndex].image;
+
+  document.getElementById("slideLink").href =
+    slides[slideIndex].link;
 
   updateDots();
 
