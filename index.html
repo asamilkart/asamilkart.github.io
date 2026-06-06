@@ -116,6 +116,14 @@ main{
 
 }
 
+.slideshowbox{
+
+  width:100%;
+  max-width:420px;
+
+}
+
+
 /* Character全体 */
 
 .characterwrap{
@@ -384,16 +392,31 @@ main{
 
 <img src="top.PNG" class="topimg">
 
-<!-- メインYouTube -->
+<div class="contentbox">
 
-<div class="youtubebox" style="margin:auto; margin-top:40px;">
+  <!-- スライドショー -->
 
-  <iframe
-    class="youtube"
-    src="https://www.youtube.com/embed/videoseries?list=PLtDU7MZ79avmn4ffGvj2qb0chWxiazdLH"
-    title="YouTube playlist"
-    allowfullscreen>
-  </iframe>
+  <div class="slideshowbox">
+
+    <img
+      id="slideshow"
+      src="latest1.png"
+      class="comicimg">
+
+  </div>
+
+  <!-- メインYouTube -->
+
+  <div class="youtubebox">
+
+    <iframe
+      class="youtube"
+      src="https://www.youtube.com/embed/videoseries?list=PLtDU7MZ79avmn4ffGvj2qb0chWxiazdLH"
+      title="YouTube playlist"
+      allowfullscreen>
+    </iframe>
+
+  </div>
 
 </div>
 
@@ -511,7 +534,31 @@ chars.forEach((img)=>{
 
   });
 
-});
+}); const slides = [
+
+  "latest1.png",
+  "latest2.png",
+  "latest3.png",
+  "latest4.png"
+
+];
+
+let slideIndex = 0;
+
+setInterval(()=>{
+
+  slideIndex++;
+
+  if(slideIndex >= slides.length){
+
+    slideIndex = 0;
+
+  }
+
+  document.getElementById("slideshow").src =
+    slides[slideIndex];
+
+},5000);
 
 </script>
 
