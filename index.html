@@ -205,6 +205,18 @@ main{
 
 }
 
+/* キャラリンク */
+
+.charalink{
+
+  position:absolute;
+
+  display:block;
+
+  z-index:2;
+
+}
+
 /* キャラクター */
 
 .small{
@@ -500,21 +512,33 @@ main{
 
   <!-- 回転部分 -->
 
-  <div class="wheel">
+<div class="wheel">
 
-    <img src="hamuko.png" class="small s1">
+  <a href="hamuko.html" class="charalink s1">
+    <img src="hamuko.png" class="small">
+  </a>
 
-    <img src="IMG_6365.png" class="small s2">
+  <a href="ringo.html" class="charalink s2">
+    <img src="IMG_6365.png" class="small">
+  </a>
 
-    <img src="sakuranbou.png" class="small s3">
+  <a href="sakuranbou.html" class="charalink s3">
+    <img src="sakuranbou.png" class="small">
+  </a>
 
-    <img src="IMG_6367.png" class="small s4">
+  <a href="chara4.html" class="charalink s4">
+    <img src="IMG_6367.png" class="small">
+  </a>
 
-    <img src="IMG_6368.png" class="small s5">
+  <a href="beta.html" class="charalink s5">
+    <img src="IMG_6368.png" class="small">
+  </a>
 
-    <img src="IMG_6361.png" class="small s6">
+  <a href="chara6.html" class="charalink s6">
+    <img src="IMG_6361.png" class="small">
+  </a>
 
-  </div>
+</div>
 
 </div>
 
@@ -574,11 +598,15 @@ main{
 
 <script>
 
-const chars = document.querySelectorAll('.small');
+const links = document.querySelectorAll('.charalink');
 
-chars.forEach((img)=>{
+links.forEach((link)=>{
 
-  img.addEventListener('click',()=>{
+  link.addEventListener('click',(e)=>{
+
+    e.preventDefault();
+
+    const img = link.querySelector('.small');
 
     img.classList.remove('clicked');
 
@@ -586,9 +614,17 @@ chars.forEach((img)=>{
 
     img.classList.add('clicked');
 
+    const target = link.getAttribute('href');
+
+    setTimeout(()=>{
+
+      window.location.href = target;
+
+    },400);
+
   });
 
-}); 
+});
 
 const slides = [
 
