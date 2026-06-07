@@ -2,53 +2,100 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Day Comic</title>
 
 <style>
 
 body{
+  margin:0;
+  padding:40px 20px;
   background:#ffffff;
   color:#35200F;
-  text-align:center;
   font-family:sans-serif;
-  padding:40px;
 }
 
 h1{
+  text-align:center;
   margin-bottom:40px;
 }
 
-img{
-  width:100%;
-  max-width:800px;
-  margin-bottom:40px;
-  border-radius:20px;
-  border:6px solid #FDE8DF;
+.comic-list{
+  max-width:900px;
+  margin:auto;
 }
 
-a{
-  color:#35200F;
+.comic-card{
+  display:block;
   text-decoration:none;
-  font-size:20px;
+  color:#35200F;
+  margin-bottom:30px;
+  padding:15px;
+  border:3px solid #FDE8DF;
+  border-radius:20px;
+  transition:.2s;
+}
+
+.comic-card:hover{
+  transform:translateY(-3px);
+}
+
+.comic-card img{
+  width:100%;
+  border-radius:15px;
+  display:block;
+}
+
+.date{
+  margin-top:12px;
+  font-size:14px;
+}
+
+.title{
+  font-size:22px;
+  font-weight:bold;
+  margin-top:5px;
+}
+
+.back{
+  display:block;
+  text-align:center;
+  margin-top:40px;
+  text-decoration:none;
+  color:#35200F;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <h1>Day Comic</h1>
 
-<img src="comic1.jpg">
+<div class="comic-list">
 
-<img src="comic2.jpg">
+  <a class="comic-card" href="comic001.html">
+    <img src="thumb001.jpg" alt="">
+    <div class="date">2026.06.08</div>
+    <div class="title">病院へ行った日</div>
+  </a>
 
-<img src="comic3.jpg">
+  <a class="comic-card" href="comic002.html">
+    <img src="thumb002.jpg" alt="">
+    <div class="date">2026.06.07</div>
+    <div class="title">雨の日の散歩</div>
+  </a>
 
-<br>
+  <a class="comic-card" href="comic003.html">
+    <img src="thumb003.jpg" alt="">
+    <div class="date">2026.06.06</div>
+    <div class="title">人形たちの朝</div>
+  </a>
 
-<a href="index.html">← TOPへ戻る</a>
+</div>
+
+<a class="back" href="index.html">← TOPへ戻る</a>
 
 </body>
 </html>
