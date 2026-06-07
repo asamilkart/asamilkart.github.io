@@ -1,1 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>欲望のりんご</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+
+  margin:0;
+  padding:40px 20px;
+
+  background:#111111;
+
+  text-align:center;
+
+  font-family:sans-serif;
+
+  overflow-x:hidden;
+
+  color:#F8EDED;
+
+}
+
+/* 背景 */
+
+.bg{
+
+  position:fixed;
+
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  opacity:0.35;
+
+  z-index:-1;
+
+}
+
+/* キャラ画像 */
+
+.chara{
+
+  width:220px;
+
+  margin-top:40px;
+
+  filter:
+    drop-shadow(0 0 18px rgba(255,255,255,0.08));
+
+}
+
+/* プロフィール */
+
+.profile{
+
+  margin-top:25px;
+
+}
+
+.name{
+
+  font-size:34px;
+
+  font-weight:bold;
+
+  color:#FFFFFF;
+
+  margin-bottom:18px;
+
+}
+
+.text{
+
+  font-size:18px;
+
+  line-height:1.9;
+
+  color:#F8EDED;
+
+}
+
+/* BOOTH + YouTube */
+
+.contentbox{
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:30px;
+
+  margin-top:50px;
+
+  flex-wrap:wrap;
+
+}
+
+.boothbox{
+
+  padding:15px;
+
+  border-radius:35px;
+
+}
+
+.youtubebox{
+
+  padding:15px;
+
+  border-radius:35px;
+
+}
+
+.linkimg{
+
+  width:100%;
+
+  max-width:320px;
+
+  border-radius:30px;
+
+  display:block;
+
+  transition:0.25s;
+
+  box-shadow:
+    0 0 20px rgba(80,255,140,0.35),
+    0 0 60px rgba(80,255,140,0.15);
+
+}
+
+.youtube{
+
+  width:100%;
+
+  max-width:320px;
+
+  aspect-ratio:16/9;
+
+  border:none;
+
+  border-radius:30px;
+
+  box-shadow:
+    0 0 20px rgba(255,70,70,0.35),
+    0 0 60px rgba(255,70,70,0.15);
+
+}
+
+/* 戻る */
+
+.back{
+
+  display:inline-block;
+
+  margin-top:120px;
+
+  color:#FFFFFF;
+
+  text-decoration:none;
+
+  font-size:16px;
+
+  letter-spacing:4px;
+
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.4),
+    0 0 20px rgba(255,255,255,0.15);
+
+  transition:0.2s;
+
+}
+
+.back:hover{
+
+  opacity:0.8;
+
+  transform:scale(1.03);
+
+}
+
+/* スマホ */
+
+@media screen and (max-width:800px){
+
+  .chara{
+
+    width:140px;
+
+  }
+
+.name{
+
+  font-size:34px;
+
+  font-weight:bold;
+
+  color:#FFFFFF;
+
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.45),
+    0 0 20px rgba(255,255,255,0.18);
+
+  margin-bottom:18px;
+
+}
+
+.text{
+
+  font-size:18px;
+
+  line-height:1.9;
+
+  color:#F8EDED;
+
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.25);
+
+}
+
+  .contentbox{
+
+    flex-wrap:nowrap;
+
+    gap:12px;
+
+    align-items:stretch;
+
+  }
+
+  .boothbox{
+
+    width:48%;
+
+    padding:10px;
+
+  }
+
+  .youtubebox{
+
+    width:48%;
+
+    padding:10px;
+
+  }
+
+  .linkimg{
+
+    max-width:none;
+
+  }
+
+  .youtube{
+
+    width:100%;
+
+    max-width:none;
+
+    aspect-ratio:1/1;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- 背景 -->
+
+<img src="ringoback.png" class="bg">
+
+<!-- キャラクター -->
+
+<img src="" class="chara">
+
+<!-- 紹介 -->
+
+<div class="profile">
+
+  <div class="name">
+？？？
+  </div>
+
+  <div class="text">
+<br>
+
+  </div>
+
+</div>
+
+<!-- BOOTH + YouTube -->
+
+<div class="contentbox">
+
+  <div class="boothbox">
+
+    <a
+      href=""
+      target="_blank">
+
+      <img
+        src=""
+        class="linkimg">
+
+    </a>
+
+  </div>
+
+  <div class="youtubebox">
+
+<iframe
+  class="youtube"
+  src="https://www.youtube.com/embed/32i0UXb8m6Y"
+  title="YouTube video player"
+  allowfullscreen>
+</iframe>
+
+  </div>
+
+</div>
+
+<!-- 戻る -->
+
+<a href="index.html" class="back">
+
+戻る
+
+</a>
+
+</body>
+</html>
