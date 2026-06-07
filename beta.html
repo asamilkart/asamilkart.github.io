@@ -109,6 +109,26 @@ body{
 
 }
 
+.boothbox{
+
+  background:rgba(120,255,120,0.10);
+
+  padding:15px;
+
+  border-radius:35px;
+
+}
+
+.youtubebox{
+
+  background:rgba(255,80,80,0.10);
+
+  padding:15px;
+
+  border-radius:35px;
+
+}
+
 .linkimg{
 
   width:100%;
@@ -117,12 +137,9 @@ body{
 
   border-radius:30px;
 
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.35);
+  display:block;
 
   transition:0.25s;
-
-  display:block;
 
 }
 
@@ -135,6 +152,7 @@ body{
 .youtube{
 
   width:100%;
+
   max-width:320px;
 
   aspect-ratio:16/9;
@@ -198,7 +216,43 @@ body{
 
   .contentbox{
 
-    gap:15px;
+    flex-wrap:nowrap;
+
+    gap:12px;
+
+    align-items:stretch;
+
+  }
+
+  .boothbox{
+
+    width:48%;
+
+    padding:10px;
+
+  }
+
+  .youtubebox{
+
+    width:48%;
+
+    padding:10px;
+
+  }
+
+  .linkimg{
+
+    max-width:none;
+
+  }
+
+  .youtube{
+
+    width:100%;
+
+    max-width:none;
+
+    aspect-ratio:1/1;
 
   }
 
@@ -238,22 +292,30 @@ body{
 
 <div class="contentbox">
 
-  <a
-    href="https://booth.pm/ja/items/7833622"
-    target="_blank">
+  <div class="boothbox">
 
-    <img
-      src="bbooth.png"
-      class="linkimg">
+    <a
+      href="https://booth.pm/ja/items/7833622"
+      target="_blank">
 
-  </a>
+      <img
+        src="bbooth.png"
+        class="linkimg">
 
-  <iframe
-    class="youtube"
-    src="https://www.youtube.com/embed/-gzY1akAO9I"
-    title="YouTube video"
-    allowfullscreen>
-  </iframe>
+    </a>
+
+  </div>
+
+  <div class="youtubebox">
+
+    <iframe
+      class="youtube"
+      src="https://www.youtube.com/embed/-gzY1akAO9I"
+      title="YouTube video"
+      allowfullscreen>
+    </iframe>
+
+  </div>
 
 </div>
 
