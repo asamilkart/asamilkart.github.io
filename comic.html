@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>日常イラスト</title>
+<title>コミック</title>
 <style>
 body{
   margin:0;
@@ -11,94 +11,74 @@ body{
   background:#ffffff;
   color:#35200F;
   font-family:sans-serif;
+  text-align:center;
 }
 h1{
-  text-align:center;
-  margin-bottom:50px;
+  margin-bottom:60px;
 }
-.comic-list{
-  max-width:800px;
-  margin:auto;
-}
-.comic-card{
+.category{
   display:block;
+  max-width:500px;
+  margin:0 auto 50px auto;
   text-decoration:none;
   color:#35200F;
-  text-align:center;
-  margin-bottom:50px;
 }
-.comic-card img{
-  width:220px;
-  height:120px;
-  object-fit:cover;
-  object-position:center;
-  border-radius:20px;
+.category img{
+  width:100%;
+  max-width:320px;
+  border-radius:25px;
+  display:block;
+  margin:0 auto 12px auto;
+}
+.category-title{
+  font-size:32px;
+  font-weight:bold;
+}
+.daily img{
   box-shadow:
     0 0 12px #FDE8DF,
     0 0 24px #FDE8DF,
-    0 0 36px rgba(253,232,223,0.7);
+    0 0 36px rgba(253,232,223,.7);
 }
-.date{
-  margin-top:8px;
-  font-size:14px;
+.metaverse img{
+  box-shadow:
+    0 0 12px #CFEFFF,
+    0 0 24px #CFEFFF,
+    0 0 36px rgba(207,239,255,.8);
 }
-.title{
-  margin-top:2px;
-  font-size:22px;
-  font-weight:bold;
+.game img{
+  box-shadow:
+    0 0 12px #FFD2D2,
+    0 0 24px #FFD2D2,
+    0 0 36px rgba(255,160,160,.8);
 }
-.pagination{
-  text-align:center;
-  margin-top:60px;
-}
-.pagination a{
-  color:#35200F;
-  text-decoration:none;
-  font-size:18px;
+.game .category-title{
+  font-size:38px;
 }
 .back{
   display:block;
-  text-align:center;
-  margin-top:40px;
-  color:#35200F;
+  margin-top:60px;
   text-decoration:none;
+  color:#35200F;
 }
 </style>
 </head>
 <body>
-<h1>日常イラスト</h1>
-<div class="comic-list">
-  <a class="comic-card" href="comic002.html">
-    <img src="comic002.png" alt="">
-    <div class="date">2023.11.16</div>
-    <div class="title">帽子屋のできごと</div>
-  </a>
-  <a class="comic-card" href="comic003.html">
-    <img src="comic003.png" alt="">
-    <div class="date">2022.04.25</div>
-    <div class="title">広告</div>
-  </a>
-  <a class="comic-card" href="comic004.html">
-    <img src="comic004.png" alt="">
-    <div class="date">2022.01.10</div>
-    <div class="title">香水</div>
-  </a>
-  <a class="comic-card" href="comic005.html">
-    <img src="comic005.png" alt="">
-    <div class="date">2021.12.22</div>
-    <div class="title">靴下</div>
-  </a>
-  <a class="comic-card" href="comic007.html">
-    <img src="comic007.png" alt="">
-    <div class="date">2021.09.22</div>
-    <div class="title">納豆キムチ</div>
-  </a>
-</div>
-<div class="pagination">
-  <a href="comic-page2.html">過去の記事 →</a>
-</div>
-
-← TOPへ戻る
-
+<h1>コミック</h1>
+<a class="category daily" href="dailycomic.html">
+  <img src="daily.png" alt="まいにち日記">
+  <div class="category-title">まいにち日記</div>
+</a>
+<a class="category metaverse" href="metaversecomic.html">
+  <img src="metaverse.png" alt="メタバース日記">
+  <div class="category-title">メタバース日記</div>
+</a>
+<a class="category game" href="gamecomic.html">
+  <img src="game.png" alt="ゲーム日記">
+  <div class="category-title">ゲーム日記</div>
+</a>
+<a class="back" href="index.html">
+  ← TOPへ戻る
+</a>
 </body>
 </html>
