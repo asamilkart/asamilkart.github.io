@@ -3,75 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ゲームジャンル</title>
+
 <style>
+
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
   padding:40px 20px;
   background:#ffffff;
   color:#35200F;
-  font-family:sans-serif;
   text-align:center;
+  font-family:sans-serif;
 }
-.category{
+
+.genrewrap{
+  max-width:700px;
+  margin:auto;
+}
+
+.genre{
+
   display:block;
-  max-width:400px;
-  margin:0 auto 50px auto;
+
+  margin:0 auto 60px;
+
   text-decoration:none;
-  color:#35200F;
+
 }
-.category img{
+
+.genre img{
+
   width:100%;
-  max-width:220px;
+  max-width:260px;
+
   border-radius:25px;
+
   display:block;
-  margin:0 auto 10px auto;
+
+  margin:auto;
+
+  transition:0.3s;
+
 }
-.category-title{
-  font-size:26px;
-  font-weight:bold;
+
+.genre img:hover{
+
+  transform:
+    scale(1.03)
+    rotate(-1deg);
+
 }
+
+/* ポケモン */
+
 .pokemon img{
+
   box-shadow:
     0 0 12px #FFE58A,
     0 0 24px #FFE58A,
     0 0 36px rgba(255,229,138,.8);
+
 }
+
+/* メタバース */
+
 .metaverse img{
+
   box-shadow:
     0 0 12px #CFEFFF,
     0 0 24px #CFEFFF,
     0 0 36px rgba(207,239,255,.8);
+
 }
+
+/* ゲーム */
+
 .game img{
+
   box-shadow:
     0 0 12px #FFD2D2,
     0 0 24px #FFD2D2,
     0 0 36px rgba(255,160,160,.8);
+
 }
+
+/* キュルン */
+
+@keyframes kyurun{
+
+  0%{
+    transform:rotate(0deg);
+  }
+
+  100%{
+    transform:rotate(360deg);
+  }
+
+}
+
+.clicked{
+
+  animation:kyurun 0.5s ease;
+
+}
+
+/* TOP */
+
 .back{
+
   display:block;
-  margin-top:60px;
+
+  margin-top:40px;
+
   text-decoration:none;
+
   color:#35200F;
+
+  font-size:18px;
+
 }
+
 </style>
+
 </head>
+
 <body>
-<a class="category pokemon" href="pokemon.html">
-  <img src="pokemon.png" alt="ポケモン">
-  <div class="category-title">ポケモン</div>
-</a>
-<a class="category metaverse" href="vr.html">
-  <img src="vr.png" alt="VR">
-  <div class="category-title">VR</div>
-</a>
-<a class="category game" href="dbd.html">
-  <img src="dbd.png" alt="dbd">
-  <div class="category-title">dbd</div>
-</a>
+
+<div class="genrewrap">
+
+  <a class="genre pokemon" href="pokemon.html">
+    <img src="pokemon.png" alt="ポケモン">
+  </a>
+
+  <a class="genre metaverse" href="vr.html">
+    <img src="vr.png" alt="VR">
+  </a>
+
+  <a class="genre game" href="dbd.html">
+    <img src="dbd.png" alt="DBD">
+  </a>
+
+</div>
+
 <a class="back" href="index.html">
-  TOP
+TOP
 </a>
+
+<script>
+
+const genres = document.querySelectorAll('.genre');
+
+genres.forEach((link)=>{
+
+  link.addEventListener('click',(e)=>{
+
+    e.preventDefault();
+
+    const img = link.querySelector('img');
+
+    img.classList.remove('clicked');
+
+    void img.offsetWidth;
+
+    img.classList.add('clicked');
+
+    const target = link.getAttribute('href');
+
+    setTimeout(()=>{
+
+      window.location.href = target;
+
+    },400);
+
+  });
+
+});
+
+</script>
+
 </body>
 </html>
