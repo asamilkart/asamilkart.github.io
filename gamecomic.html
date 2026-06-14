@@ -3,15 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>ゲームジャンル</title>
-
 <style>
-
 *{
   box-sizing:border-box;
 }
-
 body{
   margin:0;
   padding:40px 20px;
@@ -20,191 +16,128 @@ body{
   text-align:center;
   font-family:sans-serif;
 }
-
 .genretitle{
-
   display:block;
-
   margin:0 auto 50px;
-
   max-width:250px;
-
   width:50%;
-
 }
-
 .genrewrap{
-
   max-width:700px;
-
   margin:auto;
-
 }
-
 .genre{
-
-  display:block;
-
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
   margin:0 auto 60px;
-
   text-decoration:none;
-
 }
-
+.arrow{
+  font-size:38px;
+  color:#8A5A2B;
+  animation:blink 0.8s infinite;
+}
+@keyframes blink{
+  0%{
+    opacity:1;
+  }
+  50%{
+    opacity:0.2;
+  }
+  100%{
+    opacity:1;
+  }
+}
 .genre img{
-
   width:100%;
-
   max-width:260px;
-
   border-radius:25px;
-
   display:block;
-
-  margin:auto;
-
   transition:0.3s;
-
 }
-
-.genre img:hover{
-
+.genre:hover img{
   transform:
     scale(1.03)
     rotate(-1deg);
-
 }
-
 /* ポケモン */
-
 .pokemon img{
-
   box-shadow:
     0 0 12px #FFE58A,
     0 0 24px #FFE58A,
     0 0 36px rgba(255,229,138,.8);
-
 }
-
 /* VR */
-
 .vr img{
-
   box-shadow:
     0 0 12px #CFEFFF,
     0 0 24px #CFEFFF,
     0 0 36px rgba(207,239,255,.8);
-
 }
-
 /* DBD */
-
 .dbd img{
-
   box-shadow:
     0 0 12px #FFD2D2,
     0 0 24px #FFD2D2,
     0 0 36px rgba(255,160,160,.8);
-
 }
-
 /* キュルン */
-
 @keyframes kyurun{
-
   0%{
     transform:rotate(0deg);
   }
-
   100%{
     transform:rotate(360deg);
   }
-
 }
-
 .clicked{
-
   animation:kyurun 0.5s ease;
-
 }
-
 /* TOP */
-
 .back{
-
   display:block;
-
   margin-top:40px;
-
   text-decoration:none;
-
   color:#35200F;
-
   font-size:18px;
-
 }
-
 </style>
-
 </head>
-
 <body>
-
-<img
-  src="gamegenre.png"
-  class="genretitle">
-
 <div class="genrewrap">
-
   <a class="genre pokemon" href="pokemon.html">
-    <img src="pokemon.png" alt="ポケモン">
+<span class="arrow">►</span>
+<img src="pokemon.png" alt="ポケモン">
   </a>
-
   <a class="genre vr" href="vr.html">
-    <img src="vr.png" alt="VR">
+<span class="arrow">►</span>
+<img src="vr.png" alt="VR">
   </a>
-
   <a class="genre dbd" href="dbd.html">
-    <img src="dbd.png" alt="DBD">
+<span class="arrow">►</span>
+<img src="dbd.png" alt="DBD">
   </a>
-
 </div>
-
 <a class="back" href="index.html">
 TOP
 </a>
-
 <script>
-
 const genres = document.querySelectorAll('.genre');
-
 genres.forEach((link)=>{
-
   link.addEventListener('click',(e)=>{
-
     e.preventDefault();
-
     const img = link.querySelector('img');
-
     img.classList.remove('clicked');
-
     void img.offsetWidth;
-
     img.classList.add('clicked');
-
     const target = link.getAttribute('href');
-
     setTimeout(()=>{
-
       window.location.href = target;
-
     },400);
-
   });
-
 });
-
 </script>
-
 </body>
 </html>
