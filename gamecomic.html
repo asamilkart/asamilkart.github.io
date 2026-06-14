@@ -35,14 +35,14 @@ body{
   text-decoration:none;
 }
 .arrow{
-  font-size:56px;
-  font-weight:bold;
-  color:#A8FFD7;
+  font-size:52px;
+  font-weight:900;
+  color:#FFFFFF;
+  -webkit-text-stroke:2px #7CFFB2;
   text-shadow:
-    0 0 8px #A8FFD7,
-    0 0 18px #7CFFB2,
-    0 0 35px #7CFFB2,
-    0 0 55px #7CFFB2;
+    0 0 4px #7CFFB2,
+    0 0 10px #7CFFB2,
+    0 0 18px #7CFFB2;
   animation:blink 0.8s infinite;
 }
 @keyframes blink{
@@ -70,6 +70,7 @@ body{
 }
 /* ポケモン */
 .pokemon img{
+  max-width:250px;
   box-shadow:
     0 0 12px #FFE58A,
     0 0 24px #FFE58A,
@@ -114,16 +115,16 @@ body{
 <body>
 <div class="genrewrap">
   <a class="genre pokemon" href="pokemon.html">
-<span class="arrow">▶</span>
-<img src="pokemon.png" alt="ポケモン">
+    <span class="arrow">▶</span>
+    <img src="pokemon.png" alt="ポケモン">
   </a>
   <a class="genre vr" href="vr.html">
-<span class="arrow">▶</span>
-<img src="vr.png" alt="VR">
+    <span class="arrow">▶</span>
+    <img src="vr.png" alt="VR">
   </a>
   <a class="genre dbd" href="dbd.html">
-<span class="arrow">▶</span>
-<img src="dbd.png" alt="DBD">
+    <span class="arrow">▶</span>
+    <img src="dbd.png" alt="DBD">
   </a>
 </div>
 <a class="back" href="index.html">
