@@ -30,19 +30,21 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:18px;
+  gap:22px;
   margin:0 auto 60px;
   text-decoration:none;
 }
+/* サイバー三角 */
 .arrow{
-  font-size:52px;
-  font-weight:900;
-  color:#FFFFFF;
-  -webkit-text-stroke:2px #7CFFB2;
-  text-shadow:
-    0 0 4px #7CFFB2,
-    0 0 10px #7CFFB2,
-    0 0 18px #7CFFB2;
+  width:0;
+  height:0;
+  border-top:16px solid transparent;
+  border-bottom:16px solid transparent;
+  border-left:28px solid #FFFFFF;
+  filter:
+    drop-shadow(0 0 4px #7CFFB2)
+    drop-shadow(0 0 10px #7CFFB2)
+    drop-shadow(0 0 20px #7CFFB2);
   animation:blink 0.8s infinite;
 }
 @keyframes blink{
@@ -115,15 +117,15 @@ body{
 <body>
 <div class="genrewrap">
   <a class="genre pokemon" href="pokemon.html">
-    <span class="arrow">▶</span>
+    <span class="arrow"></span>
     <img src="pokemon.png" alt="ポケモン">
   </a>
   <a class="genre vr" href="vr.html">
-    <span class="arrow">▶</span>
+    <span class="arrow"></span>
     <img src="vr.png" alt="VR">
   </a>
   <a class="genre dbd" href="dbd.html">
-    <span class="arrow">▶</span>
+    <span class="arrow"></span>
     <img src="dbd.png" alt="DBD">
   </a>
 </div>
