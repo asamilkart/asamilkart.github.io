@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ギャラリー</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:30px;
+    background:#111;
+    color:white;
+    font-family:sans-serif;
+    text-align:center;
+}
+
+/* メイン画像 */
+
+#mainImage{
+    width:90%;
+    max-width:700px;
+    border-radius:25px;
+    box-shadow:0 0 30px rgba(255,255,255,.15);
+    transition:.25s;
+}
+
+/* サムネイル */
+
+.gallery{
+
+    margin-top:25px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+
+    gap:15px;
+
+    max-width:900px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+}
+
+.gallery img{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    opacity:.3;
+
+    transition:.2s;
+
+}
+
+.gallery img:hover{
+
+    transform:scale(1.05);
+
+    opacity:.7;
+
+}
+
+.gallery img.active{
+
+    outline:3px solid white;
+
+    opacity:1;
+
+}
+
+.back{
+
+    display:inline-block;
+
+    margin-top:40px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+}
+
+</style>
+
+</head>
+<body>
+
+<h1></h1>
+
+<img id="mainImage" src="260802.png">
+
+<div class="gallery" id="gallery"></div>
+
+<a href="index.html" class="back">TOP</a>
+
+<script>
+
+const images=[
+
+"260519-3.png",
+"260519-2.png",
+"260519-1.png",
+
+];
+
+const gallery=document.getElementById("gallery");
+const main=document.getElementById("mainImage");
+
+images.forEach((src,index)=>{
+
+    const img=document.createElement("img");
+
+    img.src=src;
+
+    if(index===0) img.classList.add("active");
+
+    img.onclick=()=>{
+
+        main.src=src;
+
+        document.querySelectorAll(".gallery img").forEach(i=>i.classList.remove("active"));
+
+        img.classList.add("active");
+
+    }
+
+    gallery.appendChild(img);
+
+});
+
+</script>
+
+</body>
+</html>
