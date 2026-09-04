@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FY7XDP5F57"></script>
+
 <script>
 window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
 
+function gtag(){
+  dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
 gtag('config', 'G-FY7XDP5F57');
 </script>
 
@@ -28,7 +33,7 @@ body{
 
 .comic-list{
   max-width:800px;
-  margin:auto;
+  margin:0 auto;
 }
 
 .comic-card{
@@ -40,6 +45,7 @@ body{
 }
 
 .comic-card img{
+  display:block;
   width:220px;
   height:120px;
 
@@ -48,48 +54,78 @@ body{
 
   border-radius:20px;
 
+  margin:0 auto;
+
   box-shadow:
     0 0 12px #FFE58A,
     0 0 24px #FFE58A,
     0 0 36px rgba(255,229,138,0.8);
 }
 
+/* 漫画タイトル */
+
 .comic-card a{
   color:#35200F;
   text-decoration:none;
 }
 
+.comic-card a:visited{
+  color:#999999;
+}
+
+/* 日付 */
+
 .date{
   margin-top:8px;
   font-size:14px;
+  text-align:center;
 }
+
+/* タイトル */
 
 .title{
   margin-top:2px;
   font-size:22px;
   font-weight:bold;
+  text-align:center;
 }
+
+.title a{
+  color:#35200F;
+  text-decoration:none;
+}
+
+.title a:visited{
+  color:#999999;
+}
+
+/* ページ送り */
 
 .pagination{
   text-align:center;
   margin-top:60px;
 }
 
-.pagination a{
+.pagination a,
+.pagination a:visited{
   color:#35200F;
   text-decoration:none;
   font-size:18px;
   margin:0 10px;
 }
 
+/* カテゴリ・TOP */
+
 .category{
   margin-top:40px;
 }
 
-.category a{
+.category a,
+.category a:visited{
   color:#35200F;
   text-decoration:none;
   font-size:18px;
+  margin:0 10px;
 }
 
 </style>
@@ -97,9 +133,9 @@ body{
 
 <body>
 
-<div class="comic-list" id="comic-list"></div>
+<div id="comic-list" class="comic-list"></div>
 
-<div class="pagination" id="pagination"></div>
+<div id="pagination" class="pagination"></div>
 
 <div class="category">
   <a href="comic.html">&lt;&lt;カテゴリに戻る</a>
