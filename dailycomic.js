@@ -1,11 +1,4 @@
 const comics = [
-    {
-    date: "test",
-    title: "テスト",
-    link: "test.html",
-    image: "20260827.png"
-  },
-  
   {
     date: "2026.08.27",
     title: "きまぐれねこちゃん",
