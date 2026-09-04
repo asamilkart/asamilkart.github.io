@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FY7XDP5F57"></script>
+
 <script>
 window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
 
+function gtag(){
+  dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
 gtag('config', 'G-FY7XDP5F57');
 </script>
+
 <title>メタバース</title>
+
 <style>
 
 body{
@@ -20,11 +28,12 @@ body{
   background:#ffffff;
   color:#35200F;
   font-family:sans-serif;
+  text-align:center;
 }
 
 .comic-list{
   max-width:800px;
-  margin:auto;
+  margin:0 auto;
 }
 
 .comic-card{
@@ -36,6 +45,7 @@ body{
 }
 
 .comic-card img{
+  display:block;
   width:220px;
   height:120px;
 
@@ -43,6 +53,8 @@ body{
   object-position:center;
 
   border-radius:20px;
+
+  margin:0 auto;
 
   box-shadow:
     0 0 12px #CFEFFF,
@@ -53,12 +65,14 @@ body{
 .date{
   margin-top:8px;
   font-size:14px;
+  text-align:center;
 }
 
 .title{
   margin-top:2px;
   font-size:22px;
   font-weight:bold;
+  text-align:center;
 }
 
 .pagination{
@@ -74,33 +88,14 @@ body{
 
 </style>
 </head>
+
 <body>
 
-<div class="comic-list">
+<div id="comic-list" class="comic-list"></div>
 
-  <a class="comic-card" href="20260629.html">
-    <img src="20260629.png" alt="">
-    <div class="date">2026.06.29</div>
-    <div class="title">メタバース初心者</div>
-  </a>
+<div id="pagination" class="pagination"></div>
 
-  <a class="comic-card" href="20231214.html">
-    <img src="20231214.png" alt="">
-    <div class="date">2023.12.14</div>
-    <div class="title">誰と世界を変えていく</div>
-  </a>
-
-  <a class="comic-card" href="20231205.html">
-    <img src="20231205.png" alt="">
-    <div class="date">2023.12.05</div>
-    <div class="title">あなたと世界を変えていく</div>
-  </a>
-
-</div>
-
-<div class="pagination">
-  <a href="index.html">TOP</a>
-</div>
+<script src="metaverse.js"></script>
 
 </body>
 </html>
