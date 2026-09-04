@@ -1,103 +1,90 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FY7XDP5F57"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-gtag('config', 'G-FY7XDP5F57');
-</script>
-<title>日常</title>
-<style>
-body{
-  margin:0;
-  padding:40px 20px;
-  background:#ffffff;
-  color:#35200F;
-  font-family:sans-serif;
-}
+  <title>日常 | Comic</title>
 
-.comic-list{
-  max-width:800px;
-  margin:auto;
-}
+  <style>
+    body {
+      background: #ffffff;
+      color: #35200F;
+      margin: 0;
+      padding: 40px 20px;
+      font-family: sans-serif;
+    }
 
-.comic-card{
-  display:block;
-  text-decoration:none;
-  color:#35200F;
-  text-align:center;
-  margin-bottom:50px;
-}
+    .comic-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-.comic-card img{
-  width:220px;
-  height:120px;
-  object-fit:cover;
-  object-position:center;
-  border-radius:20px;
+    .comic-item {
+      margin-bottom: 50px;
+    }
 
-  box-shadow:
-    0 0 12px #FDE8DF,
-    0 0 24px #FDE8DF,
-    0 0 36px rgba(253,232,223,0.7);
-}
+    .comic-item img {
+      display: block;
+      width: 220px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 20px;
 
-.date{
-  margin-top:8px;
-  font-size:14px;
-}
+      box-shadow:
+        0 0 12px #FDE8DF,
+        0 0 24px #FDE8DF,
+        0 0 36px rgba(253,232,223,0.7);
+    }
 
-.title{
-  margin-top:2px;
-  font-size:22px;
-  font-weight:bold;
-}
+    .comic-date {
+      margin-top: 15px;
+      font-size: 14px;
+    }
 
-.pagination{
-  text-align:center;
-  margin-top:60px;
-}
+    .comic-title {
+      margin-top: 5px;
+      font-size: 22px;
+      font-weight: bold;
+    }
 
-.pagination a{
-  color:#35200F;
-  text-decoration:none;
-  font-size:18px;
-}
-</style>
+    a {
+      color: #35200F;
+      text-decoration: none;
+    }
+
+    .pagination {
+      text-align: center;
+      margin-top: 60px;
+      margin-bottom: 40px;
+    }
+
+    .pagination a {
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    .back {
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
 </head>
+
 <body>
-<div class="comic-list">
-  </a>
-  <a class="comic-card" href="20220110.html">
-    <img src="20220110-1.png" alt="">
-    <div class="date">2022.01.10</div>
-    <div class="title">香水</div>
-  </a>
-  <a class="comic-card" href="20211222.html">
-    <img src="20211222.png" alt="">
-    <div class="date">2021.12.22</div>
-    <div class="title">靴下</div>
-  </a>
-  <a class="comic-card" href="20210922.html">
-    <img src="20210922.png" alt="">
-    <div class="date">2021.09.22</div>
-    <div class="title">納豆キムチ</div>
-  </a>
-</div>
-<div class="pagination">
 
-    <a href="dailycomic.html"><次ページ</a>
+  <div id="comic-list" class="comic-list"></div>
 
-  <br><br>
-  <a href="comic.html"><<カテゴリに戻る</a>
+  <div id="pagination" class="pagination"></div>
 
-<br><br>
+  <div class="back">
+    <a href="comic.html">&lt;&lt;カテゴリに戻る</a>
+    <br><br>
+    <a href="index.html">TOP</a>
+  </div>
 
-  <a href="index.html">TOP</a>
-</div>
+  <script src="dailycomic.js"></script>
+
 </body>
+</html>
