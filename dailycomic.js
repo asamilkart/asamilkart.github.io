@@ -62,10 +62,11 @@ const comics = [
 ];
 
 
+// 1ページに表示する漫画数
 const comicsPerPage = 7;
 
 
-// 今いるページを自動判定
+// 現在のページを自動判定
 const fileName = location.pathname.split("/").pop();
 
 let currentPage = 1;
@@ -77,19 +78,20 @@ if (pageMatch) {
 }
 
 
-// 表示するコミックを取得
+// 現在のページに表示する漫画
 const start = (currentPage - 1) * comicsPerPage;
 const end = start + comicsPerPage;
 
 const currentComics = comics.slice(start, end);
 
 
-// コミック一覧を表示
+// 漫画一覧を表示
 const comicList = document.getElementById("comic-list");
 
 if (comicList) {
   currentComics.forEach(comic => {
     const item = document.createElement("div");
+
     item.className = "comic-item";
 
     item.innerHTML = `
@@ -109,28 +111,15 @@ if (comicList) {
 }
 
 
-// ページ数
+// 全ページ数
 const totalPages = Math.ceil(comics.length / comicsPerPage);
 
 const pagination = document.getElementById("pagination");
 
 if (pagination) {
 
-  // 古いページへ
-  if (currentPage < totalPages) {
-
-    const nextPage =
-      currentPage === 1
-        ? "dailycomic-2.html"
-        : `dailycomic-${currentPage + 1}.html`;
-
-    pagination.innerHTML += `
-      <a href="${nextPage}">前ページ&gt;</a>
-    `;
-  }
-
-
-  // 新しいページへ
+  // 前ページ
+  // → 新しい漫画があるページへ戻る
   if (currentPage > 1) {
 
     const previousPage =
@@ -139,7 +128,22 @@ if (pagination) {
         : `dailycomic-${currentPage - 1}.html`;
 
     pagination.innerHTML += `
-      <a href="${previousPage}">&lt;次ページ</a>
+      <a href="${previousPage}">&lt;前ページ</a>
+    `;
+  }
+
+
+  // 次ページ
+  // → 古い漫画があるページへ進む
+  if (currentPage < totalPages) {
+
+    const nextPage =
+      currentPage === 1
+        ? "dailycomic-2.html"
+        : `dailycomic-${currentPage + 1}.html`;
+
+    pagination.innerHTML += `
+      <a href="${nextPage}">次ページ&gt;</a>
     `;
   }
 }
