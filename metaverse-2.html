@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>メタバース漫画</title>
+
+<style>
+body {
+  background: #ffffff;
+  color: #35200F;
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+h1 {
+  margin-bottom: 50px;
+}
+
+#comic-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comic-card {
+  display: block;
+  width: 220px;
+  margin-bottom: 50px;
+  text-decoration: none;
+  color: #35200F;
+}
+
+.comic-card img {
+  width: 220px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow:
+    0 0 15px #CFEFFF,
+    0 0 30px rgba(207,239,255,0.8);
+}
+
+.date {
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.title a {
+  color: #35200F;
+  text-decoration: none;
+}
+
+#pagination {
+  margin-top: 60px;
+  text-align: center;
+}
+
+#pagination a {
+  color: #35200F;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 15px;
+}
+
+.top {
+  margin-top: 40px;
+}
+
+.top a {
+  color: #35200F;
+  text-decoration: none;
+  font-size: 18px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>メタバース漫画</h1>
+
+<div id="comic-list"></div>
+
+<div id="pagination"></div>
+
+<div class="top">
+  <a href="index.html">TOP</a>
+</div>
+
+<script src="metaverse.js"></script>
+
+</body>
+</html>
