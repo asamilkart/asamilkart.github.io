@@ -75,122 +75,54 @@ body{
 
 <body>
 
-<div class="comic-list">
+<div class="comic-list" id="comicList"></div>
 
-  <!-- 新しい漫画はここに追加する -->
-
-  <a class="comic-card" href="20260827.html">
-    <img src="20260827.png" alt="">
-    <div class="date">2026.08.27</div>
-    <div class="title">きまぐれねこちゃん</div>
-  </a>
-
-  <a class="comic-card" href="20260813.html">
-    <img src="20260813.png" alt="">
-    <div class="date">2026.08.13</div>
-    <div class="title">格安チェーン店あるある</div>
-  </a>
-
-  <a class="comic-card" href="20260810.html">
-    <img src="20260810-4.png" alt="">
-    <div class="date">2026.08.10</div>
-    <div class="title">高級レストランあるある</div>
-  </a>
-
-  <a class="comic-card" href="20260626.html">
-    <img src="20260626.png" alt="">
-    <div class="date">2026.06.26</div>
-    <div class="title">ふえる</div>
-  </a>
-
-  <a class="comic-card" href="20231116.html">
-    <img src="20231116.png" alt="">
-    <div class="date">2023.11.16</div>
-    <div class="title">帽子屋のできごと</div>
-  </a>
-
-  <a class="comic-card" href="20220425.html">
-    <img src="20220425.png" alt="">
-    <div class="date">2022.04.25</div>
-    <div class="title">広告</div>
-  </a>
-
-  <a class="comic-card" href="20220219.html">
-    <img src="20220219-1.png" alt="">
-    <div class="date">2022.02.19</div>
-    <div class="title">インスタであった話</div>
-  </a>
-
-</div>
+<div class="pagination" id="pagination"></div>
 
 
-<div class="pagination">
-
-  <a id="previousPage" href="#">前ページ&gt;</a>
-
-  <br><br>
-
-  <a href="comic.html">&lt;&lt;カテゴリに戻る</a>
-
-  <br><br>
-
-  <a href="index.html">TOP</a>
-
-</div>
-
+<script src="comics.js"></script>
 
 <script>
 
-const comics = document.querySelectorAll(".comic-card");
-
 const perPage = 7;
 
-const params = new URLSearchParams(window.location.search);
+const pageNumber = 1;
 
-let page = parseInt(params.get("page")) || 1;
+const list = document.getElementById("comicList");
 
-if(page < 1){
-  page = 1;
-}
+const start = (pageNumber - 1) * perPage;
+const end = start + perPage;
 
-const totalPages = Math.ceil(comics.length / perPage);
+comics.slice(start, end).forEach(function(comic){
 
-if(page > totalPages){
-  page = totalPages;
-}
-
-
-// 今のページに表示する作品だけ表示
-
-comics.forEach(function(comic, index){
-
-  const start = (page - 1) * perPage;
-  const end = start + perPage;
-
-  if(index >= start && index < end){
-    comic.style.display = "block";
-  }else{
-    comic.style.display = "none";
-  }
+  list.innerHTML += `
+    <a class="comic-card" href="${comic.page}">
+      <img src="${comic.image}" alt="">
+      <div class="date">${comic.date}</div>
+      <div class="title">${comic.title}</div>
+    </a>
+  `;
 
 });
 
 
-// 前ページボタン
+const totalPages = Math.ceil(comics.length / perPage);
 
-const previousPage = document.getElementById("previousPage");
+const pagination = document.getElementById("pagination");
 
-if(page < totalPages){
 
-  previousPage.style.display = "inline";
+if(totalPages > 1){
 
-  previousPage.href = "dailycomic.html?page=" + (page + 1);
-
-}else{
-
-  previousPage.style.display = "none";
+  pagination.innerHTML +=
+    '<a href="dailycomic-2.html">前ページ&gt;</a><br><br>';
 
 }
+
+
+pagination.innerHTML +=
+  '<a href="comic.html">&lt;&lt;カテゴリに戻る</a>' +
+  '<br><br>' +
+  '<a href="index.html">TOP</a>';
 
 </script>
 
