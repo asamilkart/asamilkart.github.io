@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>日常 | Comic</title>
+
+  <style>
+    body {
+      background: #ffffff;
+      color: #35200F;
+      margin: 0;
+      padding: 40px 20px;
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    .comic-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .comic-item {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .comic-item img {
+      display: block;
+      width: 220px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin: 0 auto;
+
+      box-shadow:
+        0 0 12px #FDE8DF,
+        0 0 24px #FDE8DF,
+        0 0 36px rgba(253,232,223,0.7);
+    }
+
+    .comic-date {
+      margin-top: 15px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .comic-title {
+      margin-top: 5px;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    a {
+      color: #35200F;
+      text-decoration: none;
+    }
+
+    .pagination {
+      text-align: center;
+      margin-top: 60px;
+      margin-bottom: 40px;
+    }
+
+    .pagination a {
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    .back {
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="comic-list" class="comic-list"></div>
+
+  <div id="pagination" class="pagination"></div>
+
+  <div class="back">
+    <a href="comic.html">&lt;&lt;カテゴリに戻る</a>
+    <br><br>
+    <a href="index.html">TOP</a>
+  </div>
+
+  <script src="dailycomic.js"></script>
+
+</body>
+</html>
