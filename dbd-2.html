@@ -1,96 +1,88 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>dbd</title>
+
 <style>
 
 body{
-margin:0;
-padding:40px 20px;
-background:#ffffff;
-color:#35200F;
-font-family:sans-serif;
+  margin:0;
+  padding:40px 20px;
+  background:#ffffff;
+  color:#35200F;
+  font-family:sans-serif;
+  text-align:center;
 }
 
 .comic-list{
-max-width:800px;
-margin:auto;
+  max-width:800px;
+  margin:0 auto;
 }
 
 .comic-card{
-display:block;
-text-decoration:none;
-color:#35200F;
-text-align:center;
-margin-bottom:50px;
+  display:block;
+  text-decoration:none;
+  color:#35200F;
+  text-align:center;
+  margin-bottom:50px;
 }
 
 .comic-card img{
-width:220px;
-height:120px;
+  display:block;
+  width:220px;
+  height:120px;
 
-object-fit:cover;
-object-position:center;
+  object-fit:cover;
+  object-position:center;
 
-border-radius:20px;
+  border-radius:20px;
 
-box-shadow:
-0 0 12px #FFD2D2,
-0 0 24px #FFD2D2,
-0 0 36px rgba(207,239,255,0.8);
+  margin:0 auto;
+
+  box-shadow:
+    0 0 12px #FFD2D2,
+    0 0 24px #FFD2D2,
+    0 0 36px rgba(207,239,255,0.8);
 }
 
 .date{
-margin-top:8px;
-font-size:14px;
+  margin-top:8px;
+  font-size:14px;
+  text-align:center;
 }
 
 .title{
-margin-top:2px;
-font-size:22px;
-font-weight:bold;
+  margin-top:2px;
+  font-size:22px;
+  font-weight:bold;
+  text-align:center;
 }
 
 .pagination{
-text-align:center;
-margin-top:60px;
+  text-align:center;
+  margin-top:60px;
 }
 
 .pagination a{
-color:#35200F;
-text-decoration:none;
-font-size:18px;
+  color:#35200F;
+  text-decoration:none;
+  font-size:18px;
 }
 
 </style>
 </head>
+
 <body>
-<div class="comic-list">
-  <a class="comic-card" href="20201215.html">
-    <img src="20201215-7.png" alt="">
-    <div class="date">2020.12.15</div>
-    <div class="title">初心者キラー</div>
-  </a>
-  <a class="comic-card" href="20200120.html">
-    <img src="20200120.png" alt="">
-    <div class="date">2020.01.20</div>
-    <div class="title">すれ違う想い</div>
-  </a>
-</div>
-<div class="pagination">
 
-<a href="dbd.html"><次ページ</a>
+<div id="comic-list" class="comic-list"></div>
 
-<br><br>
+<div id="pagination" class="pagination"></div>
 
-<a href="comic.html">&lt;&lt;カテゴリに戻る</a>
+<script src="dbd.js"></script>
 
-&nbsp;&nbsp;
-
-<a href="index.html">TOP</a>
-
-</div>
 </body>
 </html>
