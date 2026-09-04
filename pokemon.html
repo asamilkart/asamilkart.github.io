@@ -23,6 +23,7 @@ body{
   background:#ffffff;
   color:#35200F;
   font-family:sans-serif;
+  text-align:center;
 }
 
 .comic-list{
@@ -53,6 +54,11 @@ body{
     0 0 36px rgba(255,229,138,0.8);
 }
 
+.comic-card a{
+  color:#35200F;
+  text-decoration:none;
+}
+
 .date{
   margin-top:8px;
   font-size:14px;
@@ -76,31 +82,31 @@ body{
   margin:0 10px;
 }
 
+.category{
+  margin-top:40px;
+}
+
+.category a{
+  color:#35200F;
+  text-decoration:none;
+  font-size:18px;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="comic-list">
+<div class="comic-list" id="comic-list"></div>
 
-    <a class="comic-card" href="20260816.html">
-    <img src="20260816.png" alt="">
-    <div class="date">2026.08.16</div>
-    <div class="title">うすチュウ</div>
+<div class="pagination" id="pagination"></div>
 
-  <a class="comic-card" href="20221125.html">
-    <img src="20221125.png" alt="">
-    <div class="date">2022.11.25</div>
-    <div class="title">パルデア地方へようこそ！</div>
-  </a>
-
-</div>
-
-<div class="pagination">
-  <br>
+<div class="category">
   <a href="comic.html">&lt;&lt;カテゴリに戻る</a>
   <a href="index.html">TOP</a>
 </div>
+
+<script src="./pokemon.js"></script>
 
 </body>
 </html>
