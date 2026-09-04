@@ -3,15 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FY7XDP5F57"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
 
+gtag('js', new Date());
 gtag('config', 'G-FY7XDP5F57');
 </script>
+
 <title>日常</title>
+
 <style>
 body{
   margin:0;
@@ -70,55 +73,207 @@ body{
 }
 </style>
 </head>
+
 <body>
-<div class="comic-list">
-  
- <a class="comic-card" href="20260827.html">
-    <img src="20260827.png" alt="">
-    <div class="date">2026.08.27</div>
-    <div class="title">きまぐれねこちゃん</div>
-     
- <a class="comic-card" href="20260813.html">
-    <img src="20260813.png" alt="">
-    <div class="date">2026.08.13</div>
-    <div class="title">格安チェーン店あるある</div>
-   
-  <a class="comic-card" href="20260810.html">
-    <img src="20260810-4.png" alt="">
-    <div class="date">2026.08.10</div>
-    <div class="title">高級レストランあるある</div>
-    
-  </a>  <a class="comic-card" href="20260626.html">
-    <img src="20260626.png" alt="">
-    <div class="date">2026.06.26</div>
-    <div class="title">ふえる</div>
-  </a>
-  <a class="comic-card" href="20231116.html">
-    <img src="20231116.png" alt="">
-    <div class="date">2023.11.16</div>
-    <div class="title">帽子屋のできごと</div>
-  </a>
-  <a class="comic-card" href="20220425.html">
-    <img src="20220425.png" alt="">
-    <div class="date">2022.04.25</div>
-    <div class="title">広告</div>
-  </a>
-   <a class="comic-card" href="20220219.html">
-    <img src="20220219-1.png" alt="">
-    <div class="date">2022.02.19</div>
-    <div class="title">インスタであった話</div>
-  </a>
-</div>
-<div class="pagination">
 
-<a href="dailycomic-2.html">前ページ></a>
+<div class="comic-list" id="comicList"></div>
 
-<br><br>
+<div class="pagination" id="pagination"></div>
 
-<a href="comic.html">&lt;&lt;カテゴリに戻る</a>
 
-  <br><br>
-  
-  <a href="index.html">TOP</a>
-</div>
+<script>
+
+// ======================================
+// 漫画一覧
+// 新しい漫画は一番上に追加するだけ
+// ======================================
+
+const comics = [
+
+  {
+    page: "20260827.html",
+    image: "20260827.png",
+    date: "2026.08.27",
+    title: "きまぐれねこちゃん"
+  },
+
+  {
+    page: "20260813.html",
+    image: "20260813.png",
+    date: "2026.08.13",
+    title: "格安チェーン店あるある"
+  },
+
+  {
+    page: "20260810.html",
+    image: "20260810-4.png",
+    date: "2026.08.10",
+    title: "高級レストランあるある"
+  },
+
+  {
+    page: "20260626.html",
+    image: "20260626.png",
+    date: "2026.06.26",
+    title: "ふえる"
+  },
+
+  {
+    page: "20231116.html",
+    image: "20231116.png",
+    date: "2023.11.16",
+    title: "帽子屋のできごと"
+  },
+
+  {
+    page: "20220425.html",
+    image: "20220425.png",
+    date: "2022.04.25",
+    title: "広告"
+  },
+
+  {
+    page: "20220219.html",
+    image: "20220219-1.png",
+    date: "2022.02.19",
+    title: "インスタであった話"
+  }
+
+];
+
+
+// ======================================
+// 1ページに表示する漫画の数
+// ======================================
+
+const perPage = 7;
+
+
+// ======================================
+// URLから現在のページ番号を取得
+// ======================================
+
+const params = new URLSearchParams(location.search);
+
+let currentPage = parseInt(params.get("page")) || 1;
+
+
+// ======================================
+// 全ページ数を計算
+// ======================================
+
+const totalPages = Math.ceil(comics.length / perPage);
+
+
+// ======================================
+// ページ番号が範囲外にならないようにする
+// ======================================
+
+if(currentPage < 1){
+  currentPage = 1;
+}
+
+if(currentPage > totalPages){
+  currentPage = totalPages;
+}
+
+
+// ======================================
+// 現在のページに表示する漫画を取得
+// ======================================
+
+const start = (currentPage - 1) * perPage;
+const end = start + perPage;
+
+const currentComics = comics.slice(start, end);
+
+const list = document.getElementById("comicList");
+
+
+// ======================================
+// 漫画を表示
+// ======================================
+
+currentComics.forEach(comic => {
+
+  const card = document.createElement("a");
+
+  card.className = "comic-card";
+  card.href = comic.page;
+
+  card.innerHTML = `
+    <img src="${comic.image}" alt="">
+    <div class="date">${comic.date}</div>
+    <div class="title">${comic.title}</div>
+  `;
+
+  list.appendChild(card);
+
+});
+
+
+// ======================================
+// ページ移動ボタン
+// ======================================
+
+const pagination = document.getElementById("pagination");
+
+
+// 「前ページ」
+// 実際には、古い漫画がある次のページへ進む
+
+if(currentPage < totalPages){
+
+  const previous = document.createElement("a");
+
+  if(currentPage + 1 === 1){
+    previous.href = "dailycomic.html";
+  }else{
+    previous.href = "dailycomic.html?page=" + (currentPage + 1);
+  }
+
+  previous.textContent = "前ページ>";
+
+  pagination.appendChild(previous);
+}
+
+
+// 改行
+
+pagination.appendChild(document.createElement("br"));
+pagination.appendChild(document.createElement("br"));
+
+
+// ======================================
+// カテゴリに戻る
+// ======================================
+
+const category = document.createElement("a");
+
+category.href = "comic.html";
+category.textContent = "<<カテゴリに戻る";
+
+pagination.appendChild(category);
+
+
+// 改行
+
+pagination.appendChild(document.createElement("br"));
+pagination.appendChild(document.createElement("br"));
+
+
+// ======================================
+// TOP
+// ======================================
+
+const top = document.createElement("a");
+
+top.href = "index.html";
+top.textContent = "TOP";
+
+pagination.appendChild(top);
+
+</script>
+
 </body>
+</html>
