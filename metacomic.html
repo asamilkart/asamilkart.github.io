@@ -62,11 +62,26 @@ body{
     0 0 36px rgba(207,239,255,0.8);
 }
 
+/* 漫画タイトル・リンク */
+
+.comic-card a{
+  color:#35200F;
+  text-decoration:none;
+}
+
+.comic-card a:visited{
+  color:#999999;
+}
+
+/* 日付 */
+
 .date{
   margin-top:8px;
   font-size:14px;
   text-align:center;
 }
+
+/* タイトル */
 
 .title{
   margin-top:2px;
@@ -75,12 +90,38 @@ body{
   text-align:center;
 }
 
+.title a{
+  color:#35200F;
+  text-decoration:none;
+}
+
+.title a:visited{
+  color:#999999;
+}
+
+/* ページ送り */
+
 .pagination{
   text-align:center;
   margin-top:60px;
 }
 
-.pagination a{
+.pagination a,
+.pagination a:visited{
+  color:#35200F;
+  text-decoration:none;
+  font-size:18px;
+  margin:0 10px;
+}
+
+/* TOP */
+
+.top{
+  margin-top:40px;
+}
+
+.top a,
+.top a:visited{
   color:#35200F;
   text-decoration:none;
   font-size:18px;
@@ -95,7 +136,11 @@ body{
 
 <div id="pagination" class="pagination"></div>
 
-<script src="metaverse.js"></script>
+<div class="top">
+  <a href="index.html">TOP</a>
+</div>
+
+<script src="./metaverse.js"></script>
 
 </body>
 </html>
