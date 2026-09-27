@@ -3,7 +3,7 @@ const comics = [
     date: "2026.09.28",
     title: "🕹️",
     link: "20260928.html",
-    image: "20260928-1.png"
+    image: "20260928.png"
   },
   
   {
